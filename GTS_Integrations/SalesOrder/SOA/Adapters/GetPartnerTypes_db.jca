@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adapter-config name="GetPartnerTypes" adapter="db" wsdlLocation="../WSDLs/GetPartnerTypes.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+   <connection-factory UIConnectionName="DEBS" location="eis/DB/ERP"/>
+   <endpoint-interaction portType="GetPartnerTypes_ptt" operation="GetPartnerTypes">
+      <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+         <property name="SqlString" value="SELECT account_number || ':' || party_site_number partner_id ,partner_type partner_function FROM  XXONT_GTS_TRADING_PARTNERS_V  WHERE 1=1 AND   Order_number = ?"/>
+         <property name="GetActiveUnitOfWork" value="false"/>
+      </interaction-spec>
+   </endpoint-interaction>
+</adapter-config>

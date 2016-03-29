@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsertCtMapErr" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsertCtMapErr" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_TRX_ID" type="decimal" db:index="1" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_TYPE" type="string" db:index="2" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_ID" type="decimal" db:index="3" db:default="true" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_CHILD_ID" type="decimal" db:index="4" db:default="true" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_DOCUMENT_NUMBER" type="string" db:index="5" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_OBJT" type="string" db:index="6" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_OBJ_NUM" type="string" db:index="7" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+</schema>

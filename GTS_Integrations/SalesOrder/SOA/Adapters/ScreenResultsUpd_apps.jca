@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adapter-config name="ScreenResultsUpd" adapter="apps" wsdlLocation="../WSDLs/ScreenResultsUpd.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+   <connection-factory UIConnectionName="DEBS" location="eis/Apps/SATSErp" UIOracleAppType="XMLGATEWAY"/>
+   <endpoint-interaction portType="Enqueue_ptt" operation="Enqueue">
+      <interaction-spec className="oracle.tip.adapter.apps.AppsXMLGatewayEnqueueInteractionSpec">
+         <property name="QueueName" value="ECX_INBOUND"/>
+         <property name="DatabaseSchema" value="APPS"/>
+         <property name="ObjectFieldName" value="PAYLOAD"/>
+         <property name="PayloadHeaderRequired" value="true"/>
+         <property name="OpaqueSchema" value="false"/>
+      </interaction-spec>
+   </endpoint-interaction>
+</adapter-config>

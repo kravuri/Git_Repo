@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="GetOrderHeaderInput" type="GetOrderHeaderInput"/>
+   <xs:complexType name="GetOrderHeaderInput">
+      <xs:sequence>
+         <xs:element name="arg1" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="GetOrderHeaderOutputCollection" type="GetOrderHeaderOutputCollection"/>
+   <xs:complexType name="GetOrderHeaderOutputCollection">
+      <xs:sequence>
+         <xs:element name="GetOrderHeaderOutput" type="GetOrderHeaderOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="GetOrderHeaderOutput">
+      <xs:sequence>
+         <xs:element name="HEADER_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="ORDER_NUMBER" type="xs:decimal" nillable="true"/>
+         <xs:element name="partner_id" type="xs:string" nillable="true"/>
+         <xs:element name="company_code" type="xs:string" nillable="true"/>
+         <xs:element name="FREIGHT_TERMS_CODE" type="xs:string" nillable="true"/>
+         <xs:element name="FOB_POINT_CODE" type="xs:string" nillable="true"/>
+         <xs:element name="ordererd_date" type="xs:string" nillable="true"/>
+         <xs:element name="CREATED_BY" type="xs:string" nillable="true"/>
+         <xs:element name="CREATION_DATE" type="xs:string" nillable="true"/>
+         <xs:element name="LAST_UPDATED_BY" type="xs:string" nillable="true"/>
+         <xs:element name="LAST_UPDATE_DATE" type="xs:string" nillable="true"/>
+         <xs:element name="SOLD_TO_ORG_ID" type="xs:decimal" nillable="true"/>
+         <xs:element name="ORDER_TOTAL" type="xs:decimal" nillable="true"/>
+         <xs:element name="COUNTRY" type="xs:string" nillable="true"/>
+         <xs:element name="PAYMENT_TERMS" type="xs:string" nillable="true"/>
+         <xs:element name="ORG_LOGICAL_SYSTEM" type="xs:string" nillable="true"/>
+         <xs:element name="GTS_ORDER_TYPE" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

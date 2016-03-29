@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faultPolicies 
+    xmlns="http://schemas.oracle.com/bpel/faultpolicy"
+    xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+    xmlns:bpel1="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+    xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:medns="http://schemas.oracle.com/mediator/faults"
+    xmlns:rjm="http://schemas.oracle.com/sca/rejectedmessages">
+
+    <faultPolicy id="policy1">
+        <Conditions>
+            <faultName name="bpelx:remoteFault" xmlns:bpelx="http://schemas.oracle.com/bpel/extension">
+                <condition>
+                    <test>true</test>
+                    <action ref="ora-replay"/>
+                    <alert ref="email1"/>
+                </condition>
+                <condition>
+                    <action ref="ora-retry"/>
+                    <alert ref="email1"/>
+                </condition>
+            </faultName>
+        </Conditions>
+        <Alerts>
+            <Alert id="email1">
+                <email>
+                    <To>krishna.ravuri@echostar.com</To>
+                    <CC></CC>
+                </email>
+            </Alert>
+        </Alerts>
+        <Actions>
+            <Action id="ora-termination">
+                <abort/>
+            </Action>
+            <Action id="ora-human">
+                <humanIntervention/>
+            </Action>
+            <Action id="ora-java">
+                <javaAction className="oracle.integration.platform.faultpolicy.IFaultRecoveryJavaClass" defaultAction="ora-termination"/>
+            </Action>
+            <Action id="ora-replay">
+                <replayScope/>
+            </Action>
+            <Action id="ora-rethrow">
+                <rethrowFault/>
+            </Action>
+            <Action id="default-ws">
+                <invokeWS  uri="WebServiceURI"/><!-- format - <Absolute wsdl path>|service name|port name -->
+            </Action>
+            <Action id="default-enqueue">
+                <enqueue uri="QueueURI"/> <!-- QueueURI format  - jdbc:oracle:thin:@<host>:<port>:<sid>#<un>/<pw>#queue -->
+            </Action>
+            <Action id="default-file">
+                <fileAction>
+                    <location>FOLDER_LOCATION</location>
+                    <fileName>FILE_NAME</fileName><!-- FILE_NAME will support %ID%(rejected message instance id) or %TIMESTAMP% wildcards -->
+                </fileAction>
+            </Action>
+            <Action id="ora-retry">
+                <retry>
+                    <retryCount>5</retryCount>
+                    <retryInterval>25</retryInterval>
+                    <retryFailureAction ref="ora-human"/>
+                    <exponentialBackoff/>
+                </retry>
+            </Action>
+        </Actions>
+        <Properties/>
+    </faultPolicy>
+</faultPolicies>

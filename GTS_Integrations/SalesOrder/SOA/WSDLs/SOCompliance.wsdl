@@ -1,0 +1,52 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="SOCompliance"
+     targetNamespace="http://gts.soa.echostar.com/salesorder"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:client="http://gts.soa.echostar.com/salesorder"
+     xmlns:ns1="http://gts.soa.echostar.com/salesorder"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:ns2="http://schemas.oracle.com/bpel/extension"
+     xmlns:attach="http://gts.soa.echostar.com/salesorder/attachment"
+    >
+    <plnk:partnerLinkType name="SOCompliance">
+        <plnk:role name="SOComplianceProvider" portType="client:SOCompliance"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://schemas.oracle.com/bpel/extension" location="RuntimeFault.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://gts.soa.echostar.com/salesorder" schemaLocation="../Schemas/OrderLine.xsd"/>
+        </schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://gts.soa.echostar.com/salesorder/attachment"
+             elementFormDefault="qualified">
+            <element name="attachmentElement">
+                <complexType>
+                    <attribute name="href" type="string"/>
+                </complexType>
+            </element>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="SOComplianceRequestMessage">
+        <wsdl:part name="payload" element="client:SalesOrderPayload"/>
+    </wsdl:message>
+    <wsdl:portType name="SOCompliance">
+        <wsdl:operation name="process">
+            <wsdl:input message="client:SOComplianceRequestMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SOComplianceSOAP11Binding" type="client:SOCompliance">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="process">
+            <soap:operation style="document" soapAction="http://gts.soa.echostar.com/salesorder/process"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="payload"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SOComplianceService">
+        <wsdl:port name="SOCompliancePort" binding="client:SOComplianceSOAP11Binding">
+            <soap:address location="http://www.example.com"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="GetPartnerTypes" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetPartnerTypes" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetPartnerTypes" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/GetPartnerTypes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plt:partnerLinkType name="GetPartnerTypes_plt">
+      <plt:role name="GetPartnerTypes_role">
+         <plt:portType name="tns:GetPartnerTypes_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetPartnerTypes_plt">
+      <plt:role name="GetPartnerTypes_role">
+         <plt:portType name="tns:GetPartnerTypes_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetPartnerTypes_plt">
+      <plt:role name="GetPartnerTypes_role">
+         <plt:portType name="tns:GetPartnerTypes_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetPartnerTypes_plt">
+      <plt:role name="GetPartnerTypes_role">
+         <plt:portType name="tns:GetPartnerTypes_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetPartnerTypes" schemaLocation="../Schemas/GetPartnerTypes.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetPartnerTypes" schemaLocation="../Schemas/GetPartnerTypes.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetPartnerTypes" schemaLocation="../Schemas/GetPartnerTypes.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetPartnerTypes" schemaLocation="../Schemas/GetPartnerTypes.xsd"/>
+      </schema>
+   </wsdl:types>
+   <wsdl:message name="GetPartnerTypesInput_msg">
+      <wsdl:part name="GetPartnerTypesInput_msg" element="db:GetPartnerTypesInput"/>
+   </wsdl:message>
+   <wsdl:message name="GetPartnerTypesOutputCollection_msg">
+      <wsdl:part name="GetPartnerTypesOutputCollection" element="db:GetPartnerTypesOutputCollection"/>
+   </wsdl:message>
+   <wsdl:portType name="GetPartnerTypes_ptt">
+      <wsdl:operation name="GetPartnerTypes">
+         <wsdl:input message="tns:GetPartnerTypesInput_msg"/>
+         <wsdl:output message="tns:GetPartnerTypesOutputCollection_msg"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

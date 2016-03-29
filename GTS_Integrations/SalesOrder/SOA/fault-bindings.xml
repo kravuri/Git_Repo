@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faultPolicyBindings version="2.0.1" xmlns="http://schemas.oracle.com/bpel/faultpolicy">
+
+    <composite faultPolicy="policy1"/>
+
+    <component faultPolicy="policy1">
+        <name>SOCompliance</name>
+    </component>
+
+    <reference faultPolicy="policy1">
+        <name>CallSalesOrderAPI</name>
+    </reference>
+
+    <service faultPolicy="policy1">
+        <name>SOComplianceClient</name>
+    </service>
+</faultPolicyBindings>

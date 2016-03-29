@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CreateOrUpdTrx" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CreateOrUpdTrx" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_TRX_ID" type="decimal" db:index="1" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_TYPE" type="string" db:index="2" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_ID" type="decimal" db:index="3" db:default="true" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_CHILD_ID" type="decimal" db:index="4" db:default="true" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_OPERATION" type="string" db:index="5" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_PROCESSED_FLAG" type="string" db:index="6" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_ERROR_MESSAGE" type="string" db:index="7" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_GTS_BLOCK_FLAG" type="string" db:index="8" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_GTS_BLOCK_MESSAGE" type="string" db:index="9" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+   <element name="OutputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_TRX_ID" type="decimal" db:index="1" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+</schema>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetPartnerTypes" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/GetPartnerTypes" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="GetPartnerTypesInput" type="GetPartnerTypesInput"/>
+   <xs:complexType name="GetPartnerTypesInput">
+      <xs:sequence>
+         <xs:element name="ORDER_NUMBER" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="GetPartnerTypesOutputCollection" type="GetPartnerTypesOutputCollection"/>
+   <xs:complexType name="GetPartnerTypesOutputCollection">
+      <xs:sequence>
+         <xs:element name="GetPartnerTypesOutput" type="GetPartnerTypesOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="GetPartnerTypesOutput">
+      <xs:sequence>
+         <xs:element name="partner_id" type="xs:string" nillable="true"/>
+         <xs:element name="partner_function" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

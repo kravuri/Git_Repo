@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="InsertError" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/InsertError" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/InsertError" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsertError" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plt:partnerLinkType name="InsertError_plt">
+      <plt:role name="InsertError_role">
+         <plt:portType name="tns:InsertError_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsertError" schemaLocation="../Schemas/InsertError_sp.xsd"/>
+      </schema>
+   </wsdl:types>
+   <wsdl:message name="args_in_msg">
+      <wsdl:part name="InputParameters" element="db:InputParameters"/>
+   </wsdl:message>
+   <wsdl:portType name="InsertError_ptt">
+      <wsdl:operation name="InsertError">
+         <wsdl:input message="tns:args_in_msg"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

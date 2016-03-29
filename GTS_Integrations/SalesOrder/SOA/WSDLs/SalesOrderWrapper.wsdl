@@ -1,0 +1,15 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+    
+     targetNamespace="urn:sap-com:document:sap:rfc:functions"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:s0="urn:sap-com:document:sap:rfc:functions"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="CallSalesOrderAPI">
+        <plnk:role name="_-SAPSLL_-API_6800_SYNCH_MASSPortType" portType="s0:_-SAPSLL_-API_6800_SYNCH_MASSPortType"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="urn:sap-com:document:sap:rfc:functions" location="SalesOrder.wsdl"/>
+</wsdl:definitions>

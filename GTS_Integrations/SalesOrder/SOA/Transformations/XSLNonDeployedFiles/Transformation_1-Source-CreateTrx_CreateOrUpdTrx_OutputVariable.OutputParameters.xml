@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OutputParameters xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CreateOrUpdTrx">
+   <P_TRX_ID>2132</P_TRX_ID>
+</OutputParameters>

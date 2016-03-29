@@ -1,0 +1,3025 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:s0="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/">
+   <types>
+      <xsd:schema targetNamespace="urn:sap-com:document:sap:rfc:functions">
+         <xsd:element name="_-SAPSLL_-API_6800_SYNCH_MASS">
+            <xsd:complexType>
+               <xsd:all>
+                  <xsd:element name="DOC_ADDRESS_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ADDR_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_COUNTRY_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_CTR_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_DATE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_DAT_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_DIMENSION_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_DIM_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_DUC_VALUE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_CVL_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_PARTNER_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_PAR_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_REFERENCE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_REF_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_VALUE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_VAL_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_DATE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_DAT_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_DIMENSION_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_DIM_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_DUC_VALUE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_CVL_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_PARTNER_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_PAR_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_PREFERENCE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_PRE_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_REFERENCE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_REF_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_VALUE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_VAL_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="IT_EXTENSION1">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:BAPIEXTC"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="IT_EXTENSION2">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:BAPIEXT"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="IV_NO_COMMIT" minOccurs="0">
+                     <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                           <xsd:maxLength value="1"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="IV_SET_ACTIVE" minOccurs="0">
+                     <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                           <xsd:maxLength value="1"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="IV_SYNCH_ACTIVE" minOccurs="0">
+                     <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                           <xsd:maxLength value="1"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="IV_UPDATE_TASK" minOccurs="0">
+                     <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                           <xsd:maxLength value="1"/>
+                        </xsd:restriction>
+                     </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="MAP_ERR">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_INCOMP_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="RESULT_LEGAL_CONTROL">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_RESULT_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="RETURN">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:BAPIRET2"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:all>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element name="_-SAPSLL_-API_6800_SYNCH_MASS.Response">
+            <xsd:complexType>
+               <xsd:all>
+                  <xsd:element name="DOC_ADDRESS_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ADDR_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_COUNTRY_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_CTR_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_DATE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_DAT_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_DIMENSION_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_DIM_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_DUC_VALUE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_CVL_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_PARTNER_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_PAR_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_REFERENCE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_REF_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="HDR_VALUE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_HDR_VAL_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_DATE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_DAT_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_DIMENSION_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_DIM_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_DUC_VALUE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_CVL_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_PARTNER_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_PAR_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_PREFERENCE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_PRE_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_REFERENCE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_REF_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="ITM_VALUE_DATA">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_ITM_VAL_MASS_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="IT_EXTENSION1">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:BAPIEXTC"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="IT_EXTENSION2">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:BAPIEXT"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="MAP_ERR">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_INCOMP_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="RESULT_LEGAL_CONTROL">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:_-SAPSLL_-API6800_RESULT_S"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="RETURN">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element name="item" minOccurs="0" maxOccurs="unbounded" type="s0:BAPIRET2"/>
+                        </xsd:sequence>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:all>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:complexType name="_-SAPSLL_-API6800_ADDR_S">
+            <xsd:sequence>
+               <xsd:element name="ADDR_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FORMOFADDR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="NAME" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="NAME_2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="NAME_3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="NAME_4" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="C_O_NAME" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CITY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DISTRICT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CITY_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="POSTL_COD1" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="POSTL_COD2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="POSTL_COD3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PO_BOX" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PO_BOX_CIT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DELIV_DIS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="15"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STREET" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STREET_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STR_ABBR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HOUSE_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STR_SUPPL1" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STR_SUPPL2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOCATION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BUILDING" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FLOOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ROOM_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LANGU" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REGION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SORT1" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SORT2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TIME_ZONE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TAXJURCODE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="15"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADR_NOTES" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COMM_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TEL1_NUMBR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TEL1_EXT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FAX_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FAX_EXTENS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STREET_LNG" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="60"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DISTRCT_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CHCKSTATUS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PBOXCIT_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TRANSPZONE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HOUSE_NO2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="E_MAIL" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="241"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STR_SUPPL3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TITLE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COUNTRYISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LANGU_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BUILD_LONG" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REGIOGROUP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HOME_CITY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HOMECITYNO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PCODE1_EXT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PCODE2_EXT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PCODE3_EXT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PO_W_O_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PO_BOX_REG" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="POBOX_CTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PO_CTRYISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HOMEPAGE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="132"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DONT_USE_S" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DONT_USE_P" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HOUSE_NO3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LANGU_CR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LANGUCRISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PO_BOX_LOBBY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DELI_SERV_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DELI_SERV_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="URI_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_HDR_CTR_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SEQUENCE_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                        <xsd:pattern value="\d*"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DEPARTURE_COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DEPARTURE_COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ARRIVAL_COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ARRIVAL_COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_HDR_CVL_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_VAL" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="20"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE_FLOAT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="VAL_CURR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAL_CURR_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CVRTQ" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="9"/>
+                        <xsd:fractionDigits value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_HDR_DAT_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TYPE_OF_DATE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REL_POINT_IN_TIME_TS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="15"/>
+                        <xsd:fractionDigits value="0"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_HDR_DIM_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_DIM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DIMEN" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="19"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DIMEN_FLT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="DIM_UOM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DIM_UOM_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_HDR_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="GUID_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SIMULATION_MODE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DELETION_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="APPLICATION_LEVEL" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DOCUMENT_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COMPANY_CODE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CHANGED_BY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LANGU_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BILLING_UNIT_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CANCELLATION_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COMPANY_CODE_CURCY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="EXCHANGE_RATE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="9"/>
+                        <xsd:fractionDigits value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FIXED_RATE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MODE_TR_BORDER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MODE_TR_INLAND" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_DEPA" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_EXIT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_DEST" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_PAS1" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_PAS2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_PAS3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_PAS4" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_PAS5" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_OFFICE_PAS6" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MNSTR_BORDER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CNTRY_MNSTR_BORDER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CNTRY_MNSTR_BORDER_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MNSTR_DEPART" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CNTRY_MNSTR_DEPART" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CNTRY_MNSTR_DEPART_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PLACE_LOAD_UNLOAD" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TRANSACTION_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CHANGED_AT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="15"/>
+                        <xsd:fractionDigits value="0"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="GEOGR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="INCOT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="INCOLO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HTSLIC" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADD_DATA1" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADD_DATA2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="15"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADD_DATA3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="EXPORT_CODE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREV_DOC_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOCFS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOCBP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRINT_PROFILE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SPECIAL_BUSINESS_TRANSACTION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ORGANIZATIONAL_UNIT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CRS_BORDER_JOURNEY_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="35"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ULTIMATE_CNEE_TYPE_CODE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_HDR_PAR_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DELETION_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_FUNCTION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADDR_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADDR_MANIPULATED" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAT_REG_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADDR_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ORG_LOGSYSTEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_HDR_REF_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_REFNO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REFNO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REFDAT" minOccurs="0" type="s0:date"/>
+               <xsd:element name="ORG_LOGSYSTEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="OBJTP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REFAPP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ERNAM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="AENAM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BUS_TRANSAC_DOC_TYPE_CODE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_HDR_VAL_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_VAL" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="20"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE_FLOAT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="VAL_CURR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAL_CURR_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_INCOMP_S">
+            <xsd:sequence>
+               <xsd:element name="DOCUMENT_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="OBJT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="OBJ_NUM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_ITM_CVL_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_VAL" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="20"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE_FLOAT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="VAL_CURR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAL_CURR_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CVRTQ" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="9"/>
+                        <xsd:fractionDigits value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_ITM_DAT_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TYPE_OF_DATE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REL_POINT_IN_TIME_TS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="15"/>
+                        <xsd:fractionDigits value="0"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_ITM_DIM_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_DIM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DIMEN" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="19"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DIMEN_FLT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="DIM_UOM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DIM_UOM_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_ITM_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="GUID_ITEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LEGAL_ACTIVE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="RECHECK_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DELETION_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_CATEGORY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="INVOICING_COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="INVOICING_COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DEPARTURE_COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DEPARTURE_COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ARRIVAL_COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ARRIVAL_COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRODUCT_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DIM_UOM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DIM_UOM_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="NUMERATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="7"/>
+                        <xsd:fractionDigits value="0"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DENOMINATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="7"/>
+                        <xsd:fractionDigits value="0"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CONVERSION_FACTOR" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="VAL_CURR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAL_CURR_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COUNTRY_OF_ORIGIN" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COUNTRY_OF_ORIGIN_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REGION_OF_ORIGIN" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PLANT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STORAGE_LOCATION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREDECESSOR_QUAL_REFNO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREDECESSOR_REFNO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREDECESSOR_ITEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREDECESSOR_LOGSYSTEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREDECESSOR_OBJTP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CHANGED_BY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREDECESSOR_REFAPP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TAX_DEPARTURE_COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TAX_DEPARTURE_COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TAX_ARRIVAL_COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TAX_ARRIVAL_COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PLANT_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SALES_ORGANISATION_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRODUCT_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CANCELLATION_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUST_PROCEDURE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADD_DATA1" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADD_DATA2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="15"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADD_DATA3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="INCOT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="INCOLO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PAYMENT_TERMS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BASE_UOM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BASE_UOM_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ECPID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="KMAT_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CUS_STAT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRODUCT_ENDUSE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOC_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="IDENTIFICATION_OF_GOODS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOCATION_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOCATION_ID_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HG_LV_ITEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ECPID_OP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="IDENTIFICATION_OF_GOODS_OP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MAT_SHORT_TEXT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FREE_OF_CHARGE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PROJECT_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BOM_IDENT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOGISTIC_PROCESS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HAZARDOUS_GOODS_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HAZARDOUS_GOODS_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TRANSACTION_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="EXCISE_MOVEMENT_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VEHICLE_IDENTIFICATION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="THIRD_PARTY_TRANSACTION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="EXCHANGE_RATE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="9"/>
+                        <xsd:fractionDigits value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FIXED_RATE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_ITM_PAR_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DELETION_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_FUNCTION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="8"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COUNTRY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="COUNTRY_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="2"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADDR_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADDR_MANIPULATED" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAT_REG_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ADDR_GUID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ORG_LOGSYSTEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_ITM_PRE_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LGREG" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PFONY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LGREG_APPLIED" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREF_INDICATOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PREF_METHOD" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRICE_DEPENDENT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRICE_UNIT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="5"/>
+                        <xsd:fractionDigits value="0"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRICE_UOM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRICE_UOM_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAL_CURR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAL_CURR_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALCP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="20"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALCP_FLT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="VALOR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="20"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALOR_FLT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="VALNO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="20"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALNO_FLT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="VALRB" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="20"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALRB_FLT" minOccurs="0" type="xsd:float"/>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_ITM_REF_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_REFNO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REFNO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REFDAT" minOccurs="0" type="s0:date"/>
+               <xsd:element name="ORG_LOGSYSTEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="OBJTP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="REFAPP" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ERNAM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="AENAM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="12"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="HG_LV_ITEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BUS_TRANSAC_DOC_TYPE_CODE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BUS_TRANSAC_DOC_ITM_ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_ITM_VAL_MASS_S">
+            <xsd:sequence>
+               <xsd:element name="REFNO_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_VAL" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="20"/>
+                        <xsd:fractionDigits value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE_FLOAT" minOccurs="0" type="xsd:float"/>
+               <xsd:element name="VAL_CURR" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="5"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VAL_CURR_ISO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="_-SAPSLL_-API6800_RESULT_S">
+            <xsd:sequence>
+               <xsd:element name="DOCUMENT_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="40"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="GUID_HEADER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SERV_STAH" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_STAH" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="GUID_ITEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SERV_STAI" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="QUAL_STAI" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SERVIC_TEXT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="60"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="STATUS_TEXT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="25"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CHANGED_AT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:decimal">
+                        <xsd:totalDigits value="15"/>
+                        <xsd:fractionDigits value="0"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CD_ACCESS" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ENQUEUE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ENQUEUE_PRE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ORG_UNIT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="DOCUMENT_TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ITEM_CATEGORY" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOG_SYSTEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARTNER_FUNCTION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PRODUCT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="NUMBER_RANGE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="CHECK_IND" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="BOM_SUBITEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SUBSEQUENT_FUNCTION" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LDT_RELEVANT" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="BAPIEXT">
+            <xsd:sequence>
+               <xsd:element name="PARAM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ROW" minOccurs="0" type="xsd:int"/>
+               <xsd:element name="FIELD" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="VALUE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="255"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LENGTH" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                        <xsd:pattern value="\d*"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="BAPIEXTC">
+            <xsd:sequence>
+               <xsd:element name="FIELD1" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="250"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FIELD2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="250"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FIELD3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="250"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="FIELD4" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="250"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:complexType name="BAPIRET2">
+            <xsd:sequence>
+               <xsd:element name="TYPE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ID" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="NUMBER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="3"/>
+                        <xsd:pattern value="\d*"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MESSAGE" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="220"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOG_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="LOG_MSG_NO" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="6"/>
+                        <xsd:pattern value="\d*"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MESSAGE_V1" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MESSAGE_V2" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MESSAGE_V3" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="MESSAGE_V4" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="PARAMETER" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="32"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="ROW" minOccurs="0" type="xsd:int"/>
+               <xsd:element name="FIELD" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="30"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+               <xsd:element name="SYSTEM" minOccurs="0">
+                  <xsd:simpleType>
+                     <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                     </xsd:restriction>
+                  </xsd:simpleType>
+               </xsd:element>
+            </xsd:sequence>
+         </xsd:complexType>
+         <xsd:simpleType name="date">
+            <xsd:restriction base="xsd:string">
+               <xsd:maxLength value="10"/>
+               <xsd:pattern value="....-..-.."/>
+            </xsd:restriction>
+         </xsd:simpleType>
+      </xsd:schema>
+   </types>
+   <message name="_-SAPSLL_-API_6800_SYNCH_MASSInput">
+      <part name="parameters" element="s0:_-SAPSLL_-API_6800_SYNCH_MASS"/>
+   </message>
+   <message name="_-SAPSLL_-API_6800_SYNCH_MASSOutput">
+      <part name="parameters" element="s0:_-SAPSLL_-API_6800_SYNCH_MASS.Response"/>
+   </message>
+   <portType name="_-SAPSLL_-API_6800_SYNCH_MASSPortType">
+      <operation name="_-SAPSLL_-API_6800_SYNCH_MASS">
+         <input message="s0:_-SAPSLL_-API_6800_SYNCH_MASSInput"/>
+         <output message="s0:_-SAPSLL_-API_6800_SYNCH_MASSOutput"/>
+      </operation>
+   </portType>
+   <binding name="_-SAPSLL_-API_6800_SYNCH_MASSBinding" type="s0:_-SAPSLL_-API_6800_SYNCH_MASSPortType">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="_-SAPSLL_-API_6800_SYNCH_MASS">
+         <soap:operation soapAction="http://www.sap.com/_-SAPSLL_-API_6800_SYNCH_MASS"/>
+         <input>
+            <soap:body use="literal"/>
+         </input>
+         <output>
+            <soap:body use="literal"/>
+         </output>
+      </operation>
+   </binding>
+   <service name="_-SAPSLL_-API_6800_SYNCH_MASSService">
+      <documentation>SAP Service _-SAPSLL_-API_6800_SYNCH_MASS via SOAP</documentation>
+      <port name="_-SAPSLL_-API_6800_SYNCH_MASSPortType" binding="s0:_-SAPSLL_-API_6800_SYNCH_MASSBinding">
+         <soap:address location="http://sapgtsdev.hughes.com:8012/sap/bc/soap/rfc"/>
+      </port>
+   </service>
+</definitions>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adapter-config name="CreateOrUpdTrx" adapter="db" wsdlLocation="../WSDLs/CreateOrUpdTrx.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+   <connection-factory UIConnectionName="DEBS" location="eis/DB/ERP"/>
+   <endpoint-interaction portType="CreateOrUpdTrx_ptt" operation="CreateOrUpdTrx">
+      <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+         <property name="SchemaName" value="APPS"/>
+         <property name="PackageName" value="XXSAP_GTS_SOA"/>
+         <property name="ProcedureName" value="CREATE_OR_UPDATE_TRX"/>
+         <property name="GetActiveUnitOfWork" value="false"/>
+      </interaction-spec>
+   </endpoint-interaction>
+</adapter-config>

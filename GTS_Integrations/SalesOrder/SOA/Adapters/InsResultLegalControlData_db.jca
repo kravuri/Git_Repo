@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adapter-config name="InsResultLegalControlData" adapter="db" wsdlLocation="../WSDLs/InsResultLegalControlData.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+   <connection-factory UIConnectionName="DEBS" location="eis/DB/ERP"/>
+   <endpoint-interaction portType="InsResultLegalControlData_ptt" operation="InsResultLegalControlData">
+      <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+         <property name="SchemaName" value="APPS"/>
+         <property name="PackageName" value="XXSAP_GTS_SOA"/>
+         <property name="ProcedureName" value="INSERT_RESULT_LEGAL_CTRL"/>
+         <property name="GetActiveUnitOfWork" value="false"/>
+      </interaction-spec>
+   </endpoint-interaction>
+</adapter-config>

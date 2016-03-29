@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="SOComplianceClient">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="687" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="680" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="SOComplianceClient" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://gts.soa.echostar.com/salesorder#wsdl.interface(SOCompliance)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>process</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="ScreenResultsUpd">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="262" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="255" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ScreenResultsUpd" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/apps/EchoStarSOA/SalesOrder/ScreenResultsUpd#wsdl.interface(Enqueue_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/oa_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>Enqueue</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="CallSalesOrderAPI">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="1728" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="1721" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CallSalesOrderAPI" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="urn:sap-com:document:sap:rfc:functions#wsdl.interface(_-SAPSLL_-API_6800_SYNCH_MASSPortType)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:policyIcon URI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/locked_12x12.png" X="118" Y="8" width="12" height="12"/>
+        <dgm:operations>
+            <dgm:item>_-SAPSLL_-API_6800_SYNCH_MASS</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="CreateOrUpdTrx">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="498" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="491" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="CreateOrUpdTrx" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/CreateOrUpdTrx#wsdl.interface(CreateOrUpdTrx_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>CreateOrUpdTrx</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="InsertError">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="380" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="373" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="InsertError" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/InsertError#wsdl.interface(InsertError_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>InsertError</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="ProcessBlock">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="616" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="609" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ProcessBlock" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/ProcessBlock#wsdl.interface(ProcessBlock_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>ProcessBlock</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="GetOrderHeader">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="26" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="19" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="GetOrderHeader" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetOrderHeader#wsdl.interface(GetOrderHeader_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>GetOrderHeader</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="GetAllLineDetails">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="144" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="137" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="GetAllLineDetails" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetAllLineDetails#wsdl.interface(GetAllLineDetails_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>GetAllLineDetails</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="GetDimData">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="734" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="727" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="GetDimData" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetDimData#wsdl.interface(GetDimData_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>GetDimData</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="GetPartnerTypes">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="852" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="845" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="GetPartnerTypes" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetPartnerTypes#wsdl.interface(GetPartnerTypes_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>GetPartnerTypes</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="InsResultLegalControlData">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="970" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="963" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="InsResultLegalControlData" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/InsResultLegalControlData#wsdl.interface(InsResultLegalControlData_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>InsResultLegalControlData</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="InsertCtMapErr">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="1088" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="1081" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="InsertCtMapErr" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/InsertCtMapErr#wsdl.interface(InsertCtMapErr_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>InsertCtMapErr</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="NotificationService1">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="1206" width="136" height="168">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="1199" width="156" height="182">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="NotificationService1" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>sendIMNotification</dgm:item>
+            <dgm:item>sendFaxNotification</dgm:item>
+            <dgm:item>sendVoiceNotification</dgm:item>
+            <dgm:item>sendSMSNotification</dgm:item>
+            <dgm:item>sendPagerNotification</dgm:item>
+            <dgm:item>sendURINotification</dgm:item>
+            <dgm:item>sendEmailNotification</dgm:item>
+            <dgm:item>sendNotificationToUser</dgm:item>
+            <dgm:item>sendNotificationToGroup</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="BlockedStatusCheck">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="1408" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="1401" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BlockedStatusCheck" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/BlockedStatusCheck#wsdl.interface(BlockedStatusCheck_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>BlockedStatusCheck</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="NotificationService2">
+        <dgm:body borderWidth="2" arcRad="20" X="966" Y="1526" width="136" height="168">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="956" Y="1519" width="156" height="182">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="NotificationService2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>sendIMNotification</dgm:item>
+            <dgm:item>sendFaxNotification</dgm:item>
+            <dgm:item>sendVoiceNotification</dgm:item>
+            <dgm:item>sendSMSNotification</dgm:item>
+            <dgm:item>sendPagerNotification</dgm:item>
+            <dgm:item>sendURINotification</dgm:item>
+            <dgm:item>sendEmailNotification</dgm:item>
+            <dgm:item>sendNotificationToUser</dgm:item>
+            <dgm:item>sendNotificationToGroup</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="SOCompliance">
+        <dgm:body borderWidth="2" arcRad="20" X="497" Y="672" width="130" height="386">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="487" Y="665" width="150" height="402">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="SOComplianceClient" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://gts.soa.echostar.com/salesorder#wsdl.interface(SOCompliance)"/>
+        <dgm:outputPort name="GetOrderHeader" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetOrderHeader#wsdl.interface(GetOrderHeader_ptt)"/>
+        <dgm:outputPort name="GetAllLineDetails" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetAllLineDetails#wsdl.interface(GetAllLineDetails_ptt)"/>
+        <dgm:outputPort name="ScreenResultsUpd" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/apps/EchoStarSOA/SalesOrder/ScreenResultsUpd#wsdl.interface(Enqueue_ptt)"/>
+        <dgm:outputPort name="InsertError" X="120" Y="90" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/InsertError#wsdl.interface(InsertError_ptt)"/>
+        <dgm:outputPort name="CreateOrUpdTrx" X="120" Y="115" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/CreateOrUpdTrx#wsdl.interface(CreateOrUpdTrx_ptt)"/>
+        <dgm:outputPort name="ProcessBlock" X="120" Y="140" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/ProcessBlock#wsdl.interface(ProcessBlock_ptt)"/>
+        <dgm:outputPort name="GetDimData" X="120" Y="165" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetDimData#wsdl.interface(GetDimData_ptt)"/>
+        <dgm:outputPort name="GetPartnerTypes" X="120" Y="190" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetPartnerTypes#wsdl.interface(GetPartnerTypes_ptt)"/>
+        <dgm:outputPort name="InsResultLegalControlData" X="120" Y="215" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/InsResultLegalControlData#wsdl.interface(InsResultLegalControlData_ptt)"/>
+        <dgm:outputPort name="InsertCtMapErr" X="120" Y="240" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/InsertCtMapErr#wsdl.interface(InsertCtMapErr_ptt)"/>
+        <dgm:outputPort name="NotificationService1" X="120" Y="265" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:outputPort name="BlockedStatusCheck" X="120" Y="290" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/BlockedStatusCheck#wsdl.interface(BlockedStatusCheck_ptt)"/>
+        <dgm:outputPort name="NotificationService2" X="120" Y="315" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:outputPort name="CallSalesOrderAPI" X="120" Y="340" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="urn:sap-com:document:sap:rfc:functions#wsdl.interface(_-SAPSLL_-API_6800_SYNCH_MASSPortType)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="SOComplianceClient" target="SOCompliance/SOComplianceClient" width="2">
+        <dgm:gSegment X1="168" Y1="697" X2="487" Y2="697"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/GetOrderHeader" target="GetOrderHeader" width="2">
+        <dgm:gSegment X1="637" Y1="697" X2="661" Y2="697"/>
+        <dgm:gSegment X1="661" Y1="697" X2="661" Y2="36"/>
+        <dgm:gSegment X1="661" Y1="36" X2="956" Y2="36"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/GetAllLineDetails" target="GetAllLineDetails" width="2">
+        <dgm:gSegment X1="637" Y1="722" X2="676" Y2="722"/>
+        <dgm:gSegment X1="676" Y1="722" X2="676" Y2="154"/>
+        <dgm:gSegment X1="676" Y1="154" X2="956" Y2="154"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/ScreenResultsUpd" target="ScreenResultsUpd" width="2">
+        <dgm:gSegment X1="637" Y1="747" X2="691" Y2="747"/>
+        <dgm:gSegment X1="691" Y1="747" X2="691" Y2="272"/>
+        <dgm:gSegment X1="691" Y1="272" X2="956" Y2="272"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/InsertError" target="InsertError" width="2">
+        <dgm:gSegment X1="637" Y1="772" X2="706" Y2="772"/>
+        <dgm:gSegment X1="706" Y1="772" X2="706" Y2="390"/>
+        <dgm:gSegment X1="706" Y1="390" X2="956" Y2="390"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/CreateOrUpdTrx" target="CreateOrUpdTrx" width="2">
+        <dgm:gSegment X1="637" Y1="797" X2="721" Y2="797"/>
+        <dgm:gSegment X1="721" Y1="797" X2="721" Y2="508"/>
+        <dgm:gSegment X1="721" Y1="508" X2="956" Y2="508"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/ProcessBlock" target="ProcessBlock" width="2">
+        <dgm:gSegment X1="637" Y1="822" X2="736" Y2="822"/>
+        <dgm:gSegment X1="736" Y1="822" X2="736" Y2="626"/>
+        <dgm:gSegment X1="736" Y1="626" X2="956" Y2="626"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/GetDimData" target="GetDimData" width="2">
+        <dgm:gSegment X1="637" Y1="847" X2="751" Y2="847"/>
+        <dgm:gSegment X1="751" Y1="847" X2="751" Y2="744"/>
+        <dgm:gSegment X1="751" Y1="744" X2="956" Y2="744"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/GetPartnerTypes" target="GetPartnerTypes" width="2">
+        <dgm:gSegment X1="637" Y1="872" X2="766" Y2="872"/>
+        <dgm:gSegment X1="766" Y1="872" X2="766" Y2="862"/>
+        <dgm:gSegment X1="766" Y1="862" X2="956" Y2="862"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/InsResultLegalControlData" target="InsResultLegalControlData" width="2">
+        <dgm:gSegment X1="637" Y1="897" X2="736" Y2="897"/>
+        <dgm:gSegment X1="736" Y1="897" X2="736" Y2="980"/>
+        <dgm:gSegment X1="736" Y1="980" X2="956" Y2="980"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/InsertCtMapErr" target="InsertCtMapErr" width="2">
+        <dgm:gSegment X1="637" Y1="922" X2="721" Y2="922"/>
+        <dgm:gSegment X1="721" Y1="922" X2="721" Y2="1098"/>
+        <dgm:gSegment X1="721" Y1="1098" X2="956" Y2="1098"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/NotificationService1" target="NotificationService1" width="2">
+        <dgm:gSegment X1="637" Y1="947" X2="706" Y2="947"/>
+        <dgm:gSegment X1="706" Y1="947" X2="706" Y2="1216"/>
+        <dgm:gSegment X1="706" Y1="1216" X2="956" Y2="1216"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/BlockedStatusCheck" target="BlockedStatusCheck" width="2">
+        <dgm:gSegment X1="637" Y1="972" X2="691" Y2="972"/>
+        <dgm:gSegment X1="691" Y1="972" X2="691" Y2="1418"/>
+        <dgm:gSegment X1="691" Y1="1418" X2="956" Y2="1418"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/NotificationService2" target="NotificationService2" width="2">
+        <dgm:gSegment X1="637" Y1="997" X2="676" Y2="997"/>
+        <dgm:gSegment X1="676" Y1="997" X2="676" Y2="1536"/>
+        <dgm:gSegment X1="676" Y1="1536" X2="956" Y2="1536"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="SOCompliance/CallSalesOrderAPI" target="CallSalesOrderAPI" width="2">
+        <dgm:gSegment X1="637" Y1="1022" X2="661" Y2="1022"/>
+        <dgm:gSegment X1="661" Y1="1022" X2="661" Y2="1738"/>
+        <dgm:gSegment X1="661" Y1="1738" X2="956" Y2="1738"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://gts.soa.echostar.com/salesorder" elementFormDefault="qualified" targetNamespace="http://gts.soa.echostar.com/salesorder">
+   <xsd:complexType name="OrderLineRec">
+      <xsd:sequence>
+         <xsd:element name="TransactionKey" type="xsd:string"/>
+         <xsd:element name="TriggeringPoint" type="xsd:string"/>
+         <xsd:element name="OrderLineNumber" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="SalesOrderPayload">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="OrderLine" type="OrderLineRec" maxOccurs="unbounded"/>
+            <xsd:element name="OrderNumber"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

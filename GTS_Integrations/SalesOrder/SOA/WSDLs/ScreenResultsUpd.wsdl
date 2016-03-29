@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="ScreenResultsUpd" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/apps/EchoStarSOA/SalesOrder/ScreenResultsUpd" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/apps/EchoStarSOA/SalesOrder/ScreenResultsUpd" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:obj1="http://xmlns.oracle.com/xdb/SYSTEM" xmlns:ph="http://xmlns.oracle.com/pcbpel/adapter/aq/headers/payloadheaders/" xmlns:imp1="http://TargetNamespace.com/ScreenResultsUpd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://gts.soa.echostar.com/salesorder">
+   <plt:partnerLinkType name="Enqueue_plt">
+      <plt:role name="Enqueue_role">
+         <plt:portType name="tns:Enqueue_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://TargetNamespace.com/ScreenResultsUpd" schemaLocation="../Schemas/EXPORT_COMPL_RESPONSE.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://gts.soa.echostar.com/salesorder" schemaLocation="../Schemas/OrderLine.xsd"/>
+      </schema>
+      <schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/aq/headers/payloadheaders/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:obj1="http://xmlns.oracle.com/xdb/SYSTEM">
+         <import namespace="http://xmlns.oracle.com/xdb/SYSTEM" schemaLocation="../Schemas/SYSTEM_ECXMSG.xsd"/>
+         <complexType name="ScreenResultsUpdHeaderCType">
+            <sequence>
+               <element name="PayloadHeader" type="obj1:ECXMSG"/>
+            </sequence>
+         </complexType>
+         <element name="ScreenResultsUpdHeader" type="ph:ScreenResultsUpdHeaderCType"/>
+      </schema>
+   </wsdl:types>
+   <wsdl:message name="EXPORT_COMPL_RESPONSE_msg">
+      <wsdl:part name="EXPORT_COMPL_RESPONSE" element="imp1:EXPORT_COMPL_RESPONSE"/>
+   </wsdl:message>
+   <wsdl:message name="Header_msg">
+      <wsdl:part name="Header" element="ph:ScreenResultsUpdHeader"/>
+   </wsdl:message>
+   <wsdl:portType name="Enqueue_ptt">
+      <wsdl:operation name="Enqueue">
+         <wsdl:input message="tns:EXPORT_COMPL_RESPONSE_msg"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd">
+   <name>InsertResultLegalControl-OR</name>
+   <class-mapping-descriptors>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>InsertResultLegalControl.XxontGtsResultLegalCtrl</class>
+         <alias>XXONT.XXONT_GTS_RESULT_LEGAL_CTRL</alias>
+         <primary-key>
+            <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="SEQ_NO" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="InsertResultLegalControlSelect" xsi:type="read-all-query">
+                  <reference-class>InsertResultLegalControl.XxontGtsResultLegalCtrl</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>seqNo</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="SEQ_NO" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>trxId</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="TRX_ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>objectType</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="OBJECT_TYPE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>objectId</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="OBJECT_ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>objectChildId</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="OBJECT_CHILD_ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>documentNumber</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="DOCUMENT_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>guidHeader</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="GUID_HEADER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>servStah</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="SERV_STAH" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>qualStah</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="QUAL_STAH" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>itemNumber</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="ITEM_NUMBER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>guidItem</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="GUID_ITEM" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>servStai</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="SERV_STAI" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>qualStai</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="QUAL_STAI" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>servicText</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="SERVIC_TEXT" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>statusText</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="STATUS_TEXT" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>changedAt</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="CHANGED_AT" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>cdAccess</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="CD_ACCESS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>enqueue</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="ENQUEUE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>enqueuePre</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="ENQUEUE_PRE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>orgUnit</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="ORG_UNIT" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>documentType</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="DOCUMENT_TYPE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>itemCategory</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="ITEM_CATEGORY" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>logSystem</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="LOG_SYSTEM" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>partner</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="PARTNER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>partnerFunction</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="PARTNER_FUNCTION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>product</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="PRODUCT" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>numberRange</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="NUMBER_RANGE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>checkInd</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="CHECK_IND" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>bomSubitem</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="BOM_SUBITEM" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>subsequentFunction</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="SUBSEQUENT_FUNCTION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>ldtRelevant</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="LDT_RELEVANT" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>lastUpdateDate</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="LAST_UPDATE_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>lastUpdatedBy</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="LAST_UPDATED_BY" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>creationDate</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="CREATION_DATE" xsi:type="column"/>
+               <attribute-classification>java.sql.Timestamp</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>createdBy</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="CREATED_BY" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>lastUpdateLogin</attribute-name>
+               <field table="XXONT_GTS_RESULT_LEGAL_CTRL" name="LAST_UPDATE_LOGIN" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XXONT.XXONT_GTS_RESULT_LEGAL_CTRL"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+   </class-mapping-descriptors>
+   <login xsi:type="database-login">
+      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle9Platform</platform-class>
+      <connection-url/>
+   </login>
+</object-persistence>

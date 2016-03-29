@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/BlockedStatusCheck" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/BlockedStatusCheck" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="BlockedStatusCheckInput" type="BlockedStatusCheckInput"/>
+   <xs:complexType name="BlockedStatusCheckInput">
+      <xs:sequence>
+         <xs:element name="TRX_ID" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="BlockedStatusCheckOutputCollection" type="BlockedStatusCheckOutputCollection"/>
+   <xs:complexType name="BlockedStatusCheckOutputCollection">
+      <xs:sequence>
+         <xs:element name="BlockedStatusCheckOutput" type="BlockedStatusCheckOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BlockedStatusCheckOutput">
+      <xs:sequence>
+         <xs:element name="trx_id" type="xs:decimal" nillable="true"/>
+         <xs:element name="status_text" type="xs:string" nillable="true"/>
+         <xs:element name="servic_text" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

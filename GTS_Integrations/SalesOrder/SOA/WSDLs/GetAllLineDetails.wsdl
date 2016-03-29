@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="GetAllLineDetails" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetAllLineDetails" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetAllLineDetails" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/GetAllLineDetails" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plt:partnerLinkType name="GetAllLineDetails_plt">
+      <plt:role name="GetAllLineDetails_role">
+         <plt:portType name="tns:GetAllLineDetails_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetAllLineDetails_plt">
+      <plt:role name="GetAllLineDetails_role">
+         <plt:portType name="tns:GetAllLineDetails_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetAllLineDetails_plt">
+      <plt:role name="GetAllLineDetails_role">
+         <plt:portType name="tns:GetAllLineDetails_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetAllLineDetails" schemaLocation="../Schemas/GetAllLineDetails.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetAllLineDetails" schemaLocation="../Schemas/GetAllLineDetails.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetAllLineDetails" schemaLocation="../Schemas/GetAllLineDetails.xsd"/>
+      </schema>
+   </wsdl:types>
+   <wsdl:message name="GetAllLineDetailsInput_msg">
+      <wsdl:part name="GetAllLineDetailsInput_msg" element="db:GetAllLineDetailsInput"/>
+   </wsdl:message>
+   <wsdl:message name="GetAllLineDetailsOutputCollection_msg">
+      <wsdl:part name="GetAllLineDetailsOutputCollection" element="db:GetAllLineDetailsOutputCollection"/>
+   </wsdl:message>
+   <wsdl:portType name="GetAllLineDetails_ptt">
+      <wsdl:operation name="GetAllLineDetails">
+         <wsdl:input message="tns:GetAllLineDetailsInput_msg"/>
+         <wsdl:output message="tns:GetAllLineDetailsOutputCollection_msg"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

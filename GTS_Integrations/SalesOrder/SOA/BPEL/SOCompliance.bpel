@@ -1,0 +1,988 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Tue Jun 30 10:50:34 MDT 2015
+  Author:  malleswar.mogadala
+  Type: BPEL 2.0 Process
+  Purpose: One Way BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="SOCompliance"
+               targetNamespace="http://gts.soa.echostar.com/salesorder"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://gts.soa.echostar.com/salesorder"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:ui="http://xmlns.oracle.com/soa/designer"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetOrderHeader"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetAllLineDetails"
+         xmlns:ns3="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns4="http://xmlns.oracle.com/pcbpel/adapter/db/GetAllLineDetails"
+         xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/apps/EchoStarSOA/SalesOrder/ScreenResultsUpd"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions" xmlns:ess="http://xmlns.oracle.com/scheduler"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns6="http://TargetNamespace.com/ScreenResultsUpd" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns7="urn:sap-com:document:sap:rfc:functions"
+         xmlns:ns8="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/InsertError"
+         xmlns:ns9="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/CreateOrUpdTrx"
+         xmlns:ns10="http://xmlns.oracle.com/pcbpel/adapter/db/sp/CreateOrUpdTrx"
+         xmlns:ns11="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsertError"
+         xmlns:ns12="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/ProcessBlock"
+         xmlns:ns13="http://xmlns.oracle.com/pcbpel/adapter/db/sp/ProcessBlock"
+         xmlns:ns14="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetDimData"
+         xmlns:ns15="http://xmlns.oracle.com/pcbpel/adapter/db/GetDimData"
+         xmlns:ns16="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetPartnerTypes"
+         xmlns:ns17="http://xmlns.oracle.com/pcbpel/adapter/db/GetPartnerTypes"
+         xmlns:ns18="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/InsResultLegalControlData"
+         xmlns:ns19="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsResultLegalControlData"
+         xmlns:ns20="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/InsertCtMapErr"
+         xmlns:ns21="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsertCtMapErr"
+         xmlns:ns22="http://xmlns.oracle.com/ias/pcbpel/NotificationService"
+         xmlns:ns23="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/CheckBlockedStatus"
+         xmlns:ns24="http://xmlns.oracle.com/pcbpel/adapter/db/CheckBlockedStatus"
+         xmlns:ns25="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/BlockedStatusCheck"
+         xmlns:ns26="http://xmlns.oracle.com/pcbpel/adapter/db/BlockedStatusCheck"
+         xmlns:ns27="http://gts.soa.echostar.com/salesorder/attachment">
+  <import namespace="http://schemas.oracle.com/bpel/extension" location="../WSDLs/RuntimeFault.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <import ui:processWSDL="true" namespace="http://gts.soa.echostar.com/salesorder" location="../WSDLs/SOCompliance.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="SOComplianceClient" partnerLinkType="client:SOCompliance" myRole="SOComplianceProvider"/>
+    <partnerLink name="GetOrderHeader" partnerLinkType="ns1:GetOrderHeader_plt" partnerRole="GetOrderHeader_role"/>
+    <partnerLink name="GetAllLineDetails" partnerLinkType="ns2:GetAllLineDetails_plt"
+                 partnerRole="GetAllLineDetails_role"/>
+    <partnerLink name="ScreenResultsUpd" partnerLinkType="ns5:Enqueue_plt" partnerRole="Enqueue_role"/>
+    <partnerLink name="InsertError" partnerLinkType="ns8:InsertError_plt" partnerRole="InsertError_role"/>
+    <partnerLink name="CreateOrUpdTrx" partnerLinkType="ns9:CreateOrUpdTrx_plt" partnerRole="CreateOrUpdTrx_role"/>
+    <partnerLink name="ProcessBlock" partnerLinkType="ns12:ProcessBlock_plt" partnerRole="ProcessBlock_role"/>
+    <partnerLink name="GetDimData" partnerLinkType="ns14:GetDimData_plt" partnerRole="GetDimData_role"/>
+    <partnerLink name="GetPartnerTypes" partnerLinkType="ns16:GetPartnerTypes_plt" partnerRole="GetPartnerTypes_role"/>
+    <partnerLink name="InsResultLegalControlData" partnerLinkType="ns18:InsResultLegalControlData_plt"
+                 partnerRole="InsResultLegalControlData_role"/>
+    <partnerLink name="InsertCtMapErr" partnerLinkType="ns20:InsertCtMapErr_plt" partnerRole="InsertCtMapErr_role"/>
+    <partnerLink name="NotificationService1" partnerLinkType="ns22:NotificationServiceLink"
+                 partnerRole="NotificationServiceProvider"/>
+    <partnerLink name="BlockedStatusCheck" partnerLinkType="ns25:BlockedStatusCheck_plt"
+                 partnerRole="BlockedStatusCheck_role"/>
+    <partnerLink name="NotificationService2" partnerLinkType="ns22:NotificationServiceLink"
+                 partnerRole="NotificationServiceProvider"/>
+    <partnerLink name="CallSalesOrderAPI" partnerLinkType="ns7:CallSalesOrderAPI"
+                 partnerRole="_-SAPSLL_-API_6800_SYNCH_MASSPortType"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:SOComplianceRequestMessage"/>
+    <variable name="Order_GetOrderHeader_InputVariable" messageType="ns1:GetOrderHeaderInput_msg"/>
+    <variable name="Order_GetOrderHeader_OutputVariable" messageType="ns1:GetOrderHeaderOutputCollection_msg"/>
+    <variable name="Line_GetAllLineDetails_InputVariable" messageType="ns2:GetAllLineDetailsInput_msg"/>
+    <variable name="Line_GetAllLineDetails_OutputVariable" messageType="ns2:GetAllLineDetailsOutputCollection_msg"/>
+    <variable name="SendToECX_Enqueue_InputVariable" messageType="ns5:EXPORT_COMPL_RESPONSE_msg"/>
+    <variable name="API__-SAPSLL_-API_6800_SYNCH_MASS_InputVariable"
+              messageType="ns7:_-SAPSLL_-API_6800_SYNCH_MASSInput"/>
+    <variable name="API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable"
+              messageType="ns7:_-SAPSLL_-API_6800_SYNCH_MASSOutput"/>
+    <variable name="Error_InsertError_InputVariable" messageType="ns8:args_in_msg"/>
+    <variable name="CreateTrx_CreateOrUpdTrx_InputVariable" messageType="ns9:args_in_msg"/>
+    <variable name="CreateTrx_CreateOrUpdTrx_OutputVariable" messageType="ns9:args_out_msg"/>
+    <variable name="Block_ProcessBlock_InputVariable" messageType="ns12:args_in_msg"/>
+    <variable name="Block_ProcessBlock_OutputVariable" messageType="ns12:args_out_msg"/>
+    <variable name="UpdTrx_CreateOrUpdTrx_InputVariable" messageType="ns9:args_in_msg"/>
+    <variable name="UpdTrx_CreateOrUpdTrx_OutputVariable" messageType="ns9:args_out_msg"/>
+    <variable name="Invoke1_GetDimData_InputVariable" messageType="ns14:GetDimDataInput_msg"/>
+    <variable name="Invoke1_GetDimData_OutputVariable" messageType="ns14:GetDimDataOutputCollection_msg"/>
+    <variable name="InvokeGetPartnerTypes_InputVariable" messageType="ns16:GetPartnerTypesInput_msg"/>
+    <variable name="InvokeGetPartnerTypes_OutputVariable" messageType="ns16:GetPartnerTypesOutputCollection_msg"/>
+    <variable name="Invoke_ResLegalCtrl_InputVariable" messageType="ns18:args_in_msg"/>
+    <variable name="Invoke_InsertCtMapErr_InputVariable" messageType="ns20:args_in_msg"/>
+    <variable name="Invoke1_BlockedStatusCheck_InputVariable" messageType="ns25:BlockedStatusCheckInput_msg"/>
+    <variable name="Invoke1_BlockedStatusCheck_OutputVariable"
+              messageType="ns25:BlockedStatusCheckOutputCollection_msg"/>
+    <variable name="Translate1_OutputVar_1" element="ns27:attachmentElement"/>
+  </variables>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in SOCompliance.wsdl) -->
+    <receive name="receiveInput" partnerLink="SOComplianceClient" portType="client:SOCompliance" operation="process" variable="inputVariable" createInstance="yes"/>
+    <scope name="Email1">
+      <bpelx:skipCondition>true()</bpelx:skipCondition>
+      <bpelx:annotation>
+        <bpelx:pattern patternName="bpelx:email"></bpelx:pattern>
+      </bpelx:annotation>
+      <variables>
+        <variable name="varNotificationReq" messageType="ns22:EmailNotificationRequest"/>
+        <variable name="varNotificationResponse" messageType="ns22:ArrayOfResponse"/>
+        <variable name="NotificationServiceFaultVariable" messageType="ns22:NotificationServiceErrorMessage"/>
+      </variables>
+      <sequence name="Sequence8">
+        <assign name="EmailParamsAssign">
+          <copy>
+            <from>string('Default')</from>
+            <to variable="varNotificationReq" part="EmailPayload"><query>ns22:FromAccountName</query></to>
+          </copy>
+          <copy>
+            <from>string('')</from>
+            <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Bcc</query></to>
+          </copy>
+          <copy>
+            <from>string('')</from>
+            <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Cc</query></to>
+          </copy>
+          <copy>
+            <from>string('')</from>
+            <to variable="varNotificationReq" part="EmailPayload"><query>ns22:ReplyToAddress</query></to>
+          </copy>
+          <copy>
+            <from>string('test from SOA')</from>
+            <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Subject</query></to>
+          </copy>
+          <copy>
+            <from>string('')</from>
+            <to variable="varNotificationReq" part="EmailPayload"><query>ns22:To</query></to>
+          </copy>
+          <copy>
+            <from>concat(string('Order Number : '), $inputVariable.payload)</from>
+            <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Content/ns22:ContentBody</query></to>
+          </copy>
+          <copy>
+            <from>string('text/html; charset=UTF-8')</from>
+            <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Content/ns22:MimeType</query></to>
+          </copy>
+        </assign>
+        <invoke name="InvokeNotificationService" portType="ns22:NotificationService" partnerLink="NotificationService1"
+                inputVariable="varNotificationReq" outputVariable="varNotificationResponse"
+                operation="sendEmailNotification"/>
+      </sequence>
+    </scope>
+    <assign name="OrderSQLInt">
+      <copy>
+        <from>$inputVariable.payload/client:OrderNumber</from>
+        <to>$Order_GetOrderHeader_InputVariable.GetOrderHeaderInput_msg/ns3:arg1</to>
+      </copy>
+      <copy>
+        <from>$inputVariable.payload/client:OrderNumber</from>
+        <to>$Line_GetAllLineDetails_InputVariable.GetAllLineDetailsInput_msg/ns4:arg1</to>
+      </copy>
+    </assign>
+    <invoke name="Order" partnerLink="GetOrderHeader" portType="ns1:GetOrderHeader_ptt"
+            operation="GetOrderHeader" inputVariable="Order_GetOrderHeader_InputVariable"
+            outputVariable="Order_GetOrderHeader_OutputVariable" bpelx:invokeAsDetail="no"/>
+    <invoke name="Line" partnerLink="GetAllLineDetails" portType="ns2:GetAllLineDetails_ptt"
+            operation="GetAllLineDetails" inputVariable="Line_GetAllLineDetails_InputVariable"
+            outputVariable="Line_GetAllLineDetails_OutputVariable" bpelx:invokeAsDetail="no"/>
+    <assign name="AssignCreate">
+      <copy>
+        <from>'SALESORDER'</from>
+        <to>$CreateTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_OBJECT_TYPE</to>
+      </copy>
+      <copy>
+        <from>$Order_GetOrderHeader_OutputVariable.GetOrderHeaderOutputCollection/ns3:GetOrderHeaderOutput/ns3:HEADER_ID</from>
+        <to>$CreateTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_OBJECT_ID</to>
+      </copy>
+      <copy>
+        <from>'CREATE'</from>
+        <to>$CreateTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_OPERATION</to>
+      </copy>
+      <copy>
+        <from>'N'</from>
+        <to>$CreateTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_PROCESSED_FLAG</to>
+      </copy>
+      <copy>
+        <from>'N'</from>
+        <to>$CreateTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_FLAG</to>
+      </copy>
+    </assign>
+    <invoke name="CreateTrx" partnerLink="CreateOrUpdTrx" portType="ns9:CreateOrUpdTrx_ptt"
+            operation="CreateOrUpdTrx" inputVariable="CreateTrx_CreateOrUpdTrx_InputVariable"
+            outputVariable="CreateTrx_CreateOrUpdTrx_OutputVariable" bpelx:invokeAsDetail="no"/>
+    <assign name="Assign_DimData">
+      <copy>
+        <from>$inputVariable.payload/client:OrderNumber</from>
+        <to>$Invoke1_GetDimData_InputVariable.GetDimDataInput_msg/ns15:ORDER_NUMBER</to>
+      </copy>
+      <copy>
+        <from>$inputVariable.payload/client:OrderNumber</from>
+        <to>$Invoke1_GetDimData_InputVariable.GetDimDataInput_msg/ns15:ORDER_NUMBER2</to>
+      </copy>
+      <copy>
+        <from>$inputVariable.payload/client:OrderNumber</from>
+        <to>$Invoke1_GetDimData_InputVariable.GetDimDataInput_msg/ns15:ORDER_NUMBER3</to>
+      </copy>
+    </assign>
+    <invoke name="GetDimDataInvoke" partnerLink="GetDimData" portType="ns14:GetDimData_ptt"
+            operation="GetDimData" inputVariable="Invoke1_GetDimData_InputVariable"
+            outputVariable="Invoke1_GetDimData_OutputVariable" bpelx:invokeAsDetail="no"/>
+    <assign name="Assign_GetPartnerTypes">
+      <copy>
+        <from>$inputVariable.payload/client:OrderNumber</from>
+        <to>$InvokeGetPartnerTypes_InputVariable.GetPartnerTypesInput_msg/ns17:ORDER_NUMBER</to>
+      </copy>
+    </assign>
+    <invoke name="InvokeGetPartnerTypes" partnerLink="GetPartnerTypes"
+            portType="ns16:GetPartnerTypes_ptt" operation="GetPartnerTypes"
+            inputVariable="InvokeGetPartnerTypes_InputVariable"
+            outputVariable="InvokeGetPartnerTypes_OutputVariable" bpelx:invokeAsDetail="no"/>
+    <scope name="MainLogic">
+      <variables>
+        <variable name="ScreenRequiredFlag" type="xsd:string"/>
+        <variable name="ErrorFlag" type="xsd:string"/>
+        <variable name="ErrorMessage" type="xsd:string"/>
+      </variables>
+      <faultHandlers>
+        <catchAll>
+          <rethrow name="RethrowFault"/>
+        </catchAll>
+      </faultHandlers>
+      <sequence name="Sequence1">
+        <assign name="InitVariable">
+          <copy>
+            <from>'OM_EXPORT_COMPLIANCE'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:SENDER/ns6:TASK</to>
+          </copy>
+          <copy>
+            <from>'N'</from>
+            <to>$ErrorFlag</to>
+          </copy>
+          <copy>
+            <from>'SUCCESS'</from>
+            <to>$ErrorMessage</to>
+          </copy>
+          <copy>
+            <from>'N'</from>
+            <to>$ScreenRequiredFlag</to>
+          </copy>
+          <copy>
+            <from>'EXPORT_COMPLIANCE'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:BSR/ns6:VERB</to>
+          </copy>
+          <copy>
+            <from>'OM'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:BSR/ns6:NOUN</to>
+          </copy>
+          <copy>
+            <from>'004'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:BSR/ns6:REVISION</to>
+          </copy>
+          <copy>
+            <from>'Y'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:SENDER/ns6:CONFIRMATION</to>
+          </copy>
+          <copy>
+            <from>'EN'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:SENDER/ns6:LANGUAGE</to>
+          </copy>
+          <copy>
+            <from>'UTF8'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:SENDER/ns6:CODEPAGE</to>
+          </copy>
+          <copy>
+            <from>'SYSADMIN'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:SENDER/ns6:AUTHID</to>
+          </copy>
+          <copy>
+            <from>xp20:year-from-dateTime(xp20:current-dateTime())</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:DATETIME/ns6:YEAR</to>
+          </copy>
+          <copy>
+            <from>xp20:month-from-dateTime(xp20:current-dateTime())</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:DATETIME/ns6:MONTH</to>
+          </copy>
+          <copy>
+            <from>xp20:day-from-dateTime(xp20:current-dateTime())</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:DATETIME/ns6:DAY</to>
+          </copy>
+          <copy>
+            <from>xp20:hours-from-dateTime(xp20:current-dateTime())</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:DATETIME/ns6:HOUR</to>
+          </copy>
+          <copy>
+            <from>xp20:minutes-from-dateTime(xp20:current-dateTime())</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:DATETIME/ns6:MINUTE</to>
+          </copy>
+          <copy>
+            <from>substring-before(xp20:seconds-from-dateTime(xp20:current-dateTime()),'.')</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:DATETIME/ns6:SECOND</to>
+          </copy>
+          <copy>
+            <from>substring-after(xp20:seconds-from-dateTime(xp20:current-dateTime()),'.')</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:DATETIME/ns6:SUBSECOND</to>
+          </copy>
+          <copy>
+            <from>'ITM Application'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:SENDER/ns6:COMPONENT</to>
+          </copy>
+          <copy>
+            <from>'ORACLE'</from>
+            <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:SENDER/ns6:LOGICALID</to>
+          </copy>
+        </assign>
+        <forEach parallel="no" counterName="j" name="CheckScreen">
+          <startCounterValue>1</startCounterValue>
+          <finalCounterValue>count($Line_GetAllLineDetails_OutputVariable.GetAllLineDetailsOutputCollection/ns4:GetAllLineDetailsOutput)</finalCounterValue>
+          <scope name="CheckScreenLoop">
+            <if name="CheckCountry">
+              <documentation>
+                <![CDATA[ScreenRequired]]>
+              </documentation>
+              <condition>$Line_GetAllLineDetails_OutputVariable.GetAllLineDetailsOutputCollection/ns4:GetAllLineDetailsOutput[$j]/ns4:ARRIVAL_COUNTRY != 'US'</condition>
+              <assign name="ScreenRequired">
+                <copy>
+                  <from>'Y'</from>
+                  <to>$ScreenRequiredFlag</to>
+                </copy>
+              </assign>
+            </if>
+          </scope>
+        </forEach>
+        <if name="IfScreenRequired">
+          <documentation>
+            <![CDATA[yes]]>
+          </documentation>
+          <condition>$ScreenRequiredFlag = 'Y'</condition>
+          <sequence name="Sequence3">
+            <assign name="SOMap">
+              <bpelx:annotation>
+                <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+              </bpelx:annotation>
+              <copy>
+                <from>ora:doXSLTransformForDoc("../Transformations/SOMap.xsl", $Order_GetOrderHeader_OutputVariable.GetOrderHeaderOutputCollection, "Line_GetAllLineDetails_OutputVariable.GetAllLineDetailsOutputCollection", $Line_GetAllLineDetails_OutputVariable.GetAllLineDetailsOutputCollection, "Invoke1_GetDimData_OutputVariable.GetDimDataOutputCollection", $Invoke1_GetDimData_OutputVariable.GetDimDataOutputCollection, "InvokeGetPartnerTypes_OutputVariable.GetPartnerTypesOutputCollection", $InvokeGetPartnerTypes_OutputVariable.GetPartnerTypesOutputCollection)</from>
+                <to variable="API__-SAPSLL_-API_6800_SYNCH_MASS_InputVariable" part="parameters"/>
+              </copy>
+            </assign>
+            <invoke name="API"
+                    inputVariable="API__-SAPSLL_-API_6800_SYNCH_MASS_InputVariable"
+                    outputVariable="API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable"
+                    partnerLink="CallSalesOrderAPI" portType="ns7:_-SAPSLL_-API_6800_SYNCH_MASSPortType"
+                    operation="_-SAPSLL_-API_6800_SYNCH_MASS" bpelx:invokeAsDetail="no"/>
+            <if name="CheckReturnCount">
+              <condition>count($API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item) &gt;0</condition>
+              <forEach parallel="no" counterName="m" name="LoopGTSReturn">
+                <startCounterValue>1</startCounterValue>
+                <finalCounterValue>count($API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item)</finalCounterValue>
+                <scope name="Scope1">
+                  <sequence name="Sequence6">
+                    <if name="CheckSystemError">
+                      <documentation>
+                        <![CDATA[SystemError]]>
+                      </documentation>
+                      <condition>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/TYPE = 'E'</condition>
+                      <sequence name="Sequence4">
+                        <assign name="AssignError">
+                          <copy>
+                            <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                            <to>$Error_InsertError_InputVariable.InputParameters/ns11:P_TRX_ID</to>
+                          </copy>
+                          <copy>
+                            <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/TYPE</from>
+                            <to>$Error_InsertError_InputVariable.InputParameters/ns11:P_TYPE</to>
+                          </copy>
+                          <copy>
+                            <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/ID</from>
+                            <to>$Error_InsertError_InputVariable.InputParameters/ns11:P_ID</to>
+                          </copy>
+                          <copy>
+                            <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/MESSAGE</from>
+                            <to>$Error_InsertError_InputVariable.InputParameters/ns11:P_MESSAGE</to>
+                          </copy>
+                          <copy>
+                            <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/NUMBER</from>
+                            <to>$Error_InsertError_InputVariable.InputParameters/ns11:P_NUMBER</to>
+                          </copy>
+                        </assign>
+                        <invoke name="Error" partnerLink="InsertError" portType="ns8:InsertError_ptt"
+                                operation="InsertError" inputVariable="Error_InsertError_InputVariable"
+                                bpelx:invokeAsDetail="no"/>
+                      </sequence>
+                      <else>
+                        <documentation>
+                          <![CDATA[NotError]]>
+                        </documentation>
+                        <sequence name="Sequence5">
+                          <assign name="AssignBlock">
+                            <copy>
+                              <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                              <to>$Block_ProcessBlock_InputVariable.InputParameters/ns13:P_TRX_ID</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/TYPE</from>
+                              <to>$Block_ProcessBlock_InputVariable.InputParameters/ns13:P_TYPE</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/ID</from>
+                              <to>$Block_ProcessBlock_InputVariable.InputParameters/ns13:P_ID</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/NUMBER</from>
+                              <to>$Block_ProcessBlock_InputVariable.InputParameters/ns13:P_NUMBER</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RETURN/item[$m]/MESSAGE</from>
+                              <to>$Block_ProcessBlock_InputVariable.InputParameters/ns13:P_MESSAGE</to>
+                            </copy>
+                          </assign>
+                          <invoke name="Block" partnerLink="ProcessBlock" portType="ns12:ProcessBlock_ptt"
+                                  operation="ProcessBlock" inputVariable="Block_ProcessBlock_InputVariable"
+                                  outputVariable="Block_ProcessBlock_OutputVariable" bpelx:invokeAsDetail="no"/>
+                        </sequence>
+                      </else>
+                    </if>
+                    <if name="CheckError">
+                      <documentation>
+                        <![CDATA[Error]]>
+                      </documentation>
+                      <condition>$ErrorFlag = 'Y'</condition>
+                      <assign name="ECXAssignError">
+                        <copy>
+                          <from>'ERROR'</from>
+                          <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/STATUS</to>
+                        </copy>
+                        <copy>
+                          <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                          <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_TRX_ID</to>
+                        </copy>
+                        <copy>
+                          <from>$ErrorMessage</from>
+                          <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_ERROR_MESSAGE</to>
+                        </copy>
+                        <copy>
+                          <from>'E'</from>
+                          <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_PROCESSED_FLAG</to>
+                        </copy>
+                        <copy>
+                          <from>'System Error'</from>
+                          <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/DESCRIPTION</to>
+                        </copy>
+                        <copy>
+                          <from>'SYSTEM'</from>
+                          <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/ERROR/TYPE</to>
+                        </copy>
+                        <copy>
+                          <from>'SYSTEM'</from>
+                          <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/ERROR/CODE</to>
+                        </copy>
+                        <copy>
+                          <from>$ErrorMessage</from>
+                          <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/ERROR/DESCRIPTION</to>
+                        </copy>
+                        <copy>
+                          <from>'Denied Party Screening'</from>
+                          <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/TYPE</to>
+                        </copy>
+                        <copy>
+                          <from>'N'</from>
+                          <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/SUCCESS</to>
+                        </copy>
+                      </assign>
+                      <else>
+                        <bpelx:annotation>
+                          <bpelx:documentation>
+                            <![CDATA[Sucess]]>
+                          </bpelx:documentation>
+                        </bpelx:annotation>
+                        <if name="CheckBlock">
+                          <documentation>
+                            <![CDATA[Blocked]]>
+                          </documentation>
+                          <condition>$Block_ProcessBlock_OutputVariable.OutputParameters/ns13:P_BLOCK_FLAG = 'Y' </condition>
+                          <assign name="ECXAssignBlock">
+                            <copy>
+                              <from>'Denied Party Screening'</from>
+                              <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/TYPE</to>
+                            </copy>
+                            <copy>
+                              <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                              <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_OBJECT_TYPE</to>
+                            </copy>
+                            <copy>
+                              <from>'Y'</from>
+                              <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_PROCESSED_FLAG</to>
+                            </copy>
+                            <copy>
+                              <from>'SUCCESS'</from>
+                              <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_ERROR_MESSAGE</to>
+                            </copy>
+                            <copy>
+                              <from>'Y'</from>
+                              <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_FLAG</to>
+                            </copy>
+                            <copy>
+                              <from>'N'</from>
+                              <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/SUCCESS</to>
+                            </copy>
+                            <copy>
+                              <from>$Block_ProcessBlock_OutputVariable.OutputParameters/ns13:P_BLOCK_MSG</from>
+                              <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_MESSAGE</to>
+                            </copy>
+                            <copy>
+                              <from>$Block_ProcessBlock_OutputVariable.OutputParameters/ns13:P_BLOCK_MSG</from>
+                              <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/DESCRIPTION</to>
+                            </copy>
+                          </assign>
+                          <else>
+                            <bpelx:annotation>
+                              <bpelx:documentation>
+                                <![CDATA[NotBlocked]]>
+                              </bpelx:documentation>
+                            </bpelx:annotation>
+                            <assign name="ECXAssignComplaint">
+                              <copy>
+                                <from>'COMPLIANT'</from>
+                                <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/STATUS</to>
+                              </copy>
+                              <copy>
+                                <from>'COMPLIANT'</from>
+                                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_MESSAGE</to>
+                              </copy>
+                              <copy>
+                                <from>'N'</from>
+                                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_FLAG</to>
+                              </copy>
+                              <copy>
+                                <from>'SUCCESS'</from>
+                                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_ERROR_MESSAGE</to>
+                              </copy>
+                              <copy>
+                                <from>'Y'</from>
+                                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_PROCESSED_FLAG</to>
+                              </copy>
+                              <copy>
+                                <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_TRX_ID</to>
+                              </copy>
+                            </assign>
+                          </else>
+                        </if>
+                      </else>
+                    </if>
+                  </sequence>
+                </scope>
+              </forEach>
+              <else>
+                <sequence name="Sequence9">
+                  <sequence name="Sequence7">
+                    <forEach parallel="no" counterName="k" name="LoopResultControlOutput">
+                      <startCounterValue>1</startCounterValue>
+                      <finalCounterValue>count($API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item)</finalCounterValue>
+                      <scope name="Scope2">
+                        <sequence>
+                          <assign name="Asgn_ResultLegalControl">
+                            <copy>
+                              <from>'SALESORDER'</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_OBJECT_TYPE</to>
+                            </copy>
+                            <copy>
+                              <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_TRX_ID</to>
+                            </copy>
+                            <copy>
+                              <from>$Order_GetOrderHeader_OutputVariable.GetOrderHeaderOutputCollection/ns3:GetOrderHeaderOutput/ns3:HEADER_ID</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_OBJECT_ID</to>
+                            </copy>
+                            <copy ignoreMissingFromData="yes">
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/DOCUMENT_NUMBER</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_DOCUMENT_NUMBER</to>
+                            </copy>
+                            <copy ignoreMissingFromData="yes">
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/GUID_HEADER</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_GUID_HEADER</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/SERV_STAH</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_SERV_STAH</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/QUAL_STAH</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_QUAL_STAH</to>
+                            </copy>
+                            <copy ignoreMissingFromData="yes">
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/ITEM_NUMBER</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_ITEM_NUMBER</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/GUID_ITEM</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_GUID_ITEM</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/SERV_STAI</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_SERV_STAI</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/QUAL_STAI</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_QUAL_STAI</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/SERVIC_TEXT</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_SERVIC_TEXT</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/STATUS_TEXT</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_STATUS_TEXT</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/CHANGED_AT</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_CHANGED_AT</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/CD_ACCESS</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_CD_ACCESS</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/ENQUEUE</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_ENQUEUE</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/ENQUEUE_PRE</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_ENQUEUE_PRE</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/ORG_UNIT</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_ORG_UNIT</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/DOCUMENT_TYPE</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_DOCUMENT_TYPE</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/ITEM_CATEGORY</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_ITEM_CATEGORY</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/LOG_SYSTEM</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_LOG_SYSTEM</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/PARTNER</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_PARTNER</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/PARTNER_FUNCTION</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_PARTNER_FUNCTION</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/PRODUCT</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_PRODUCT</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/NUMBER_RANGE</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_NUMBER_RANGE</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/CHECK_IND</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_CHECK_IND</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/BOM_SUBITEM</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_BOM_SUBITEM</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/SUBSEQUENT_FUNCTION</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_SUBSEQUENT_FUNCTION</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/RESULT_LEGAL_CONTROL/item[$k]/LDT_RELEVANT</from>
+                              <to>$Invoke_ResLegalCtrl_InputVariable.InputParameters/ns19:P_LDT_RELEVANT</to>
+                            </copy>
+                          </assign>
+                          <invoke name="Inv_InsResCtrlLegalData" partnerLink="InsResultLegalControlData"
+                                  portType="ns18:InsResultLegalControlData_ptt" operation="InsResultLegalControlData"
+                                  inputVariable="Invoke_ResLegalCtrl_InputVariable" bpelx:invokeAsDetail="no"/>
+                        </sequence>
+                      </scope>
+                    </forEach>
+                    <forEach parallel="no" counterName="n" name="LoopCtMapErr">
+                      <startCounterValue>1</startCounterValue>
+                      <finalCounterValue>count($API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/MAP_ERR/item)</finalCounterValue>
+                      <scope name="Scope3">
+                        <sequence>
+                          <assign name="Asgn_Ct_Map_Err">
+                            <copy>
+                              <from>'SALESORDER'</from>
+                              <to>$Invoke_InsertCtMapErr_InputVariable.InputParameters/ns21:P_OBJECT_TYPE</to>
+                            </copy>
+                            <copy>
+                              <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                              <to>$Invoke_InsertCtMapErr_InputVariable.InputParameters/ns21:P_TRX_ID</to>
+                            </copy>
+                            <copy>
+                              <from>$Order_GetOrderHeader_OutputVariable.GetOrderHeaderOutputCollection/ns3:GetOrderHeaderOutput/ns3:HEADER_ID</from>
+                              <to>$Invoke_InsertCtMapErr_InputVariable.InputParameters/ns21:P_OBJECT_ID</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/MAP_ERR/item[$n]/DOCUMENT_NUMBER</from>
+                              <to>$Invoke_InsertCtMapErr_InputVariable.InputParameters/ns21:P_DOCUMENT_NUMBER</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/MAP_ERR/item[$n]/OBJT</from>
+                              <to>$Invoke_InsertCtMapErr_InputVariable.InputParameters/ns21:P_OBJT</to>
+                            </copy>
+                            <copy>
+                              <from>$API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters/MAP_ERR/item[$n]/OBJ_NUM</from>
+                              <to>$Invoke_InsertCtMapErr_InputVariable.InputParameters/ns21:P_OBJ_NUM</to>
+                            </copy>
+                          </assign>
+                          <invoke name="InvokeCtMapErr" partnerLink="InsertCtMapErr" portType="ns20:InsertCtMapErr_ptt"
+                                  operation="InsertCtMapErr" inputVariable="Invoke_InsertCtMapErr_InputVariable"
+                                  bpelx:invokeAsDetail="no"/>
+                        </sequence>
+                      </scope>
+                    </forEach>
+                  </sequence>
+                  <assign name="Asgn_Block_Status">
+                    <copy>
+                      <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                      <to>$Invoke1_BlockedStatusCheck_InputVariable.BlockedStatusCheckInput_msg/ns26:TRX_ID</to>
+                    </copy>
+                  </assign>
+                  <invoke name="Inv_Block_Status_Check" partnerLink="BlockedStatusCheck"
+                          portType="ns25:BlockedStatusCheck_ptt" operation="BlockedStatusCheck"
+                          inputVariable="Invoke1_BlockedStatusCheck_InputVariable"
+                          outputVariable="Invoke1_BlockedStatusCheck_OutputVariable" bpelx:invokeAsDetail="no"/>
+                  <if name="CheckIfBlocked">
+                    <condition>$Invoke1_BlockedStatusCheck_OutputVariable.BlockedStatusCheckOutputCollection/ns26:BlockedStatusCheckOutput/ns26:status_text='Blocked / Checked'</condition>
+                    <sequence name="Sequence10">
+                      <assign name="ECXAssignComplaint"
+                              xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+                        <copy>
+                          <from>'NON_COMPLIANT'</from>
+                          <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/STATUS</to>
+                        </copy>
+                        <copy>
+                          <from>'NON_COMPLIANT'</from>
+                          <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_MESSAGE</to>
+                        </copy>
+                        <copy>
+                          <from>'N'</from>
+                          <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_FLAG</to>
+                        </copy>
+                        <copy>
+                          <from>'SUCCESS'</from>
+                          <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_ERROR_MESSAGE</to>
+                        </copy>
+                        <copy>
+                          <from>'Y'</from>
+                          <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_PROCESSED_FLAG</to>
+                        </copy>
+                        <copy>
+                          <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                          <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_TRX_ID</to>
+                        </copy>
+                      </assign>
+                    </sequence>
+                    <else><assign name="ECXAssignComplaint"
+                                  xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+      <copy>
+         <from>'COMPLIANT'</from>
+         <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/STATUS</to>
+      </copy>
+      <copy>
+         <from>'COMPLIANT'</from>
+         <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_MESSAGE</to>
+      </copy>
+      <copy>
+         <from>'N'</from>
+         <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_FLAG</to>
+      </copy>
+      <copy>
+         <from>'SUCCESS'</from>
+         <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_ERROR_MESSAGE</to>
+      </copy>
+      <copy>
+         <from>'Y'</from>
+         <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_PROCESSED_FLAG</to>
+      </copy>
+      <copy>
+         <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+         <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_TRX_ID</to>
+      </copy>
+   </assign></else>
+                  </if>
+                  <assign name="Transformation1">
+                    <bpelx:annotation>
+                      <bpelx:pattern patternName="bpelx:transformation"></bpelx:pattern>
+                    </bpelx:annotation>
+                    <copy>
+                      <from>ora:doXSLTransformForDoc("../Transformations/Transformation_1.xsl", $API__-SAPSLL_-API_6800_SYNCH_MASS_OutputVariable.parameters, "CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters", $CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters)</from>
+                      <to variable="Invoke1_BlockedStatusCheck_OutputVariable"
+                          part="BlockedStatusCheckOutputCollection"/>
+                    </copy>
+                  </assign>
+                  <scope name="Email2">
+                    <bpelx:annotation>
+                      <bpelx:pattern patternName="bpelx:email"></bpelx:pattern>
+                    </bpelx:annotation>
+                    <variables>
+                      <variable name="varNotificationReq" messageType="ns22:EmailNotificationRequest"/>
+                      <variable name="varNotificationResponse" messageType="ns22:ArrayOfResponse"/>
+                      <variable name="NotificationServiceFaultVariable"
+                                messageType="ns22:NotificationServiceErrorMessage"/>
+                    </variables>
+                    <sequence name="Sequence11">
+                      <assign name="EmailParamsAssign">
+                        <copy>
+                          <from>string('Default')</from>
+                          <to variable="varNotificationReq" part="EmailPayload"><query>ns22:FromAccountName</query></to>
+                        </copy>
+                        <copy>
+                          <from>string('')</from>
+                          <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Bcc</query></to>
+                        </copy>
+                        <copy>
+                          <from>string('')</from>
+                          <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Cc</query></to>
+                        </copy>
+                        <copy>
+                          <from>string('')</from>
+                          <to variable="varNotificationReq" part="EmailPayload"><query>ns22:ReplyToAddress</query></to>
+                        </copy>
+                        <copy>
+                          <from>string('')</from>
+                          <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Subject</query></to>
+                        </copy>
+                        <copy>
+                          <from>string('krishna.ravuri@echostar.com')</from>
+                          <to variable="varNotificationReq" part="EmailPayload"><query>ns22:To</query></to>
+                        </copy>
+                        <copy>
+                          <from>concat(string('&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;table border="1" style="width:100%"&gt;&lt;tr&gt;'), concat("&lt;th&gt;STATUS_TEXT&lt;/th&gt;", "&amp;lt;br&amp;gt;",oraext:create-delimited-string(&lt;td&gt;$Invoke1_BlockedStatusCheck_OutputVariable.BlockedStatusCheckOutputCollection/ns26:BlockedStatusCheckOutput/ns26:status_text, "&amp;lt;br&amp;gt; "),"&amp;lt;br&amp;gt;"), string('&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;'), concat("&lt;th&gt;SERVIC_TEXT&lt;/th&gt;", "&amp;lt;br&amp;gt;",oraext:create-delimited-string(&lt;td&gt;$Invoke1_BlockedStatusCheck_OutputVariable.BlockedStatusCheckOutputCollection/ns26:BlockedStatusCheckOutput/ns26:servic_text, "&amp;lt;br&amp;gt; "),"&amp;lt;br&amp;gt;"), string('&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;'))</from>
+                          <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Content/ns22:ContentBody</query></to>
+                        </copy>
+                        <copy>
+                          <from>string('text/html; charset=UTF-8')</from>
+                          <to variable="varNotificationReq" part="EmailPayload"><query>ns22:Content/ns22:MimeType</query></to>
+                        </copy>
+                      </assign>
+                      <invoke name="InvokeNotificationService" portType="ns22:NotificationService"
+                              partnerLink="NotificationService2" inputVariable="varNotificationReq"
+                              outputVariable="varNotificationResponse" operation="sendEmailNotification"/>
+                    </sequence>
+                  </scope>
+                </sequence>
+              </else>
+            </if>
+          </sequence>
+          <else>
+            <documentation>
+              <![CDATA[No]]>
+            </documentation>
+            <assign name="ECXAssignUSOrder">
+              <copy>
+                <from>'COMPLIANT'</from>
+                <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/STATUS</to>
+              </copy>
+              <copy>
+                <from>'Y'</from>
+                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_PROCESSED_FLAG</to>
+              </copy>
+              <copy>
+                <from>'SUCCESS'</from>
+                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_ERROR_MESSAGE</to>
+              </copy>
+              <copy>
+                <from>'N'</from>
+                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_FLAG</to>
+              </copy>
+              <copy>
+                <from>'COMPLIANT'</from>
+                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_GTS_BLOCK_MESSAGE</to>
+              </copy>
+              <copy>
+                <from>$CreateTrx_CreateOrUpdTrx_OutputVariable.OutputParameters/ns10:P_TRX_ID</from>
+                <to>$UpdTrx_CreateOrUpdTrx_InputVariable.InputParameters/ns10:P_TRX_ID</to>
+              </copy>
+              <copy>
+                <from>'US Sales Order. No compliance screening required'</from>
+                <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/DESCRIPTION</to>
+              </copy>
+              <copy>
+                <from>'Denied Party Screening'</from>
+                <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/TYPE</to>
+              </copy>
+              <copy>
+                <from>'Y'</from>
+                <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/EXPORT_COMP_RESULT/SUCCESS</to>
+              </copy>
+            </assign>
+          </else>
+        </if>
+        <forEach parallel="no" counterName="i" name="LoopLines">
+          <startCounterValue>1</startCounterValue>
+          <finalCounterValue>count($inputVariable.payload/client:OrderLine)</finalCounterValue>
+          <scope name="ECXUpdateLoop">
+            <sequence name="Sequence2">
+              <assign name="AssignECX">
+                <copy>
+                  <from>$inputVariable.payload/client:OrderLine[$i]/client:TransactionKey</from>
+                  <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/TRANSACTION_KEY</to>
+                </copy>
+                <copy>
+                  <from>$inputVariable.payload/client:OrderLine[$i]/client:TransactionKey</from>
+                  <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:CNTROLAREA/ns6:SENDER/ns6:REFERENCEID</to>
+                </copy>
+                <copy>
+                  <from>$inputVariable.payload/client:OrderLine[$i]/client:TriggeringPoint</from>
+                  <to>$SendToECX_Enqueue_InputVariable.EXPORT_COMPL_RESPONSE/ns6:DATAAREA/MESSAGE/TRIGGERING_POINT</to>
+                </copy>
+              </assign>
+              <invoke name="SendToECX" partnerLink="ScreenResultsUpd" portType="ns5:Enqueue_ptt" operation="Enqueue"
+                      inputVariable="SendToECX_Enqueue_InputVariable" bpelx:invokeAsDetail="no">
+                <bpelx:toProperties>
+                  <bpelx:toProperty name="jca.apps.ecx.MessageType">'XML'</bpelx:toProperty>
+                  <bpelx:toProperty name="jca.apps.ecx.MessageStandard">'OAG'</bpelx:toProperty>
+                  <bpelx:toProperty name="jca.apps.ecx.TransactionType">'ITM'</bpelx:toProperty>
+                  <bpelx:toProperty name="jca.apps.ecx.TransactionSubtype">'EXPORT_COMPLIANCE'</bpelx:toProperty>
+                  <bpelx:toProperty name="jca.apps.ecx.PartySiteId">'ITM'</bpelx:toProperty>
+                  <bpelx:toProperty name="jca.apps.ecx.DocumentNumber">$inputVariable.payload/client:OrderLine[$i]/client:TransactionKey</bpelx:toProperty>
+                </bpelx:toProperties>
+              </invoke>
+            </sequence>
+          </scope>
+        </forEach>
+      </sequence>
+    </scope>
+    <invoke name="UpdTrx" partnerLink="CreateOrUpdTrx" portType="ns9:CreateOrUpdTrx_ptt"
+            operation="CreateOrUpdTrx" inputVariable="UpdTrx_CreateOrUpdTrx_InputVariable"
+            outputVariable="UpdTrx_CreateOrUpdTrx_OutputVariable" bpelx:invokeAsDetail="no"/>
+  </sequence>
+</process>

@@ -1,0 +1,11 @@
+<adapter-config name="BlockedStatusCheck" adapter="db" wsdlLocation="../WSDLs/BlockedStatusCheck.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="DEBS_DB" location="eis/DB/ERP"/>
+  <endpoint-interaction portType="BlockedStatusCheck_ptt" operation="BlockedStatusCheck">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select trx_id, status_text,servic_text from xxont.xxont_gts_result_legal_ctrl where trx_id = ? and UPPER(substr(status_text,1,7)) = 'BLOCKED' and rownum =1"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

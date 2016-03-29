@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsResultLegalControlData" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/InsResultLegalControlData" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <complexType>
+         <sequence>
+            <element name="P_TRX_ID" type="decimal" db:index="1" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_TYPE" type="string" db:index="2" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_ID" type="decimal" db:index="3" db:default="true" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_OBJECT_CHILD_ID" type="decimal" db:index="4" db:default="true" db:type="NUMBER" minOccurs="0" nillable="true"/>
+            <element name="P_DOCUMENT_NUMBER" type="string" db:index="5" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_GUID_HEADER" type="string" db:index="6" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_SERV_STAH" type="string" db:index="7" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_QUAL_STAH" type="string" db:index="8" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_ITEM_NUMBER" type="string" db:index="9" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_GUID_ITEM" type="string" db:index="10" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_SERV_STAI" type="string" db:index="11" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_QUAL_STAI" type="string" db:index="12" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_SERVIC_TEXT" type="string" db:index="13" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_STATUS_TEXT" type="string" db:index="14" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_CHANGED_AT" type="string" db:index="15" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_CD_ACCESS" type="string" db:index="16" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_ENQUEUE" type="string" db:index="17" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_ENQUEUE_PRE" type="string" db:index="18" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_ORG_UNIT" type="string" db:index="19" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_DOCUMENT_TYPE" type="string" db:index="20" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_ITEM_CATEGORY" type="string" db:index="21" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_LOG_SYSTEM" type="string" db:index="22" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_PARTNER" type="string" db:index="23" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_PARTNER_FUNCTION" type="string" db:index="24" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_PRODUCT" type="string" db:index="25" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_NUMBER_RANGE" type="string" db:index="26" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_CHECK_IND" type="string" db:index="27" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_BOM_SUBITEM" type="string" db:index="28" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_SUBSEQUENT_FUNCTION" type="string" db:index="29" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+            <element name="P_LDT_RELEVANT" type="string" db:index="30" db:default="true" db:type="VARCHAR2" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+</schema>

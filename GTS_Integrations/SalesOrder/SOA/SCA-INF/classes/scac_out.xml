@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line>215</line>
+      <col/>
+      <file>BPEL/SOCompliance.bpel</file>
+      <name>BPEL/SOCompliance.bpel</name>
+      <fix>Add a predicate to select an element from the sequence.</fix>
+      <msg>The XPath segment "child::ns3:GetOrderHeaderOutput" selects a sequence of elements - a predicate MAY be needed to correctly select an element.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line>614</line>
+      <col/>
+      <file>BPEL/SOCompliance.bpel</file>
+      <name>BPEL/SOCompliance.bpel</name>
+      <fix>Add a predicate to select an element from the sequence.</fix>
+      <msg>The XPath segment "child::ns3:GetOrderHeaderOutput" selects a sequence of elements - a predicate MAY be needed to correctly select an element.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line>743</line>
+      <col/>
+      <file>BPEL/SOCompliance.bpel</file>
+      <name>BPEL/SOCompliance.bpel</name>
+      <fix>Add a predicate to select an element from the sequence.</fix>
+      <msg>The XPath segment "child::ns3:GetOrderHeaderOutput" selects a sequence of elements - a predicate MAY be needed to correctly select an element.</msg>
+   </Fault>
+   <Fault>
+      <severity>error</severity>
+      <loc/>
+      <line>882</line>
+      <col/>
+      <file>BPEL/SOCompliance.bpel</file>
+      <name>BPEL/SOCompliance.bpel</name>
+      <fix>Check expression syntax on &lt;bpel:from>.</fix>
+      <msg>The expression "concat(string('&lt;!DOCTYPE html>
+&lt;html>
+&lt;body>
+&lt;ta ..." has invalid syntax - Unexpected '&lt;'</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:wire/ns:target.uri[.='GetAllLineDetails']</loc>
+      <line>194</line>
+      <col>19</col>
+      <file>C:\JDeveloper\mywork\GTS_Integrations\SalesOrder\SOA\composite.xml</file>
+      <name>C:\JDeveloper\mywork\GTS_Integrations\SalesOrder\SOA\composite.xml</name>
+      <fix/>
+      <msg>Schema validation failed with exception "Invalid element 'element' in 'all'"</msg>
+   </Fault>
+</Faults>

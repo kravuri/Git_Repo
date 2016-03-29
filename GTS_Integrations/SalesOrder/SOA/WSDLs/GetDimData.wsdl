@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="GetDimData" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetDimData" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/GTS/SalesOrder/GetDimData" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/GetDimData" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plt:partnerLinkType name="GetDimData_plt">
+      <plt:role name="GetDimData_role">
+         <plt:portType name="tns:GetDimData_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetDimData_plt">
+      <plt:role name="GetDimData_role">
+         <plt:portType name="tns:GetDimData_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetDimData" schemaLocation="../Schemas/GetDimData.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetDimData" schemaLocation="../Schemas/GetDimData.xsd"/>
+      </schema>
+   </wsdl:types>
+   <wsdl:message name="GetDimDataInput_msg">
+      <wsdl:part name="GetDimDataInput_msg" element="db:GetDimDataInput"/>
+   </wsdl:message>
+   <wsdl:message name="GetDimDataOutputCollection_msg">
+      <wsdl:part name="GetDimDataOutputCollection" element="db:GetDimDataOutputCollection"/>
+   </wsdl:message>
+   <wsdl:portType name="GetDimData_ptt">
+      <wsdl:operation name="GetDimData">
+         <wsdl:input message="tns:GetDimDataInput_msg"/>
+         <wsdl:output message="tns:GetDimDataOutputCollection_msg"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

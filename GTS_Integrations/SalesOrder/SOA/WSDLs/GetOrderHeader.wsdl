@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="GetOrderHeader" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetOrderHeader" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/EchoStarSOA/SalesOrder/GetOrderHeader" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plt:partnerLinkType name="GetOrderHeader_plt">
+      <plt:role name="GetOrderHeader_role">
+         <plt:portType name="tns:GetOrderHeader_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetOrderHeader_plt">
+      <plt:role name="GetOrderHeader_role">
+         <plt:portType name="tns:GetOrderHeader_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetOrderHeader_plt">
+      <plt:role name="GetOrderHeader_role">
+         <plt:portType name="tns:GetOrderHeader_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetOrderHeader_plt">
+      <plt:role name="GetOrderHeader_role">
+         <plt:portType name="tns:GetOrderHeader_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetOrderHeader_plt">
+      <plt:role name="GetOrderHeader_role">
+         <plt:portType name="tns:GetOrderHeader_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetOrderHeader_plt">
+      <plt:role name="GetOrderHeader_role">
+         <plt:portType name="tns:GetOrderHeader_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="GetOrderHeader_plt">
+      <plt:role name="GetOrderHeader_role">
+         <plt:portType name="tns:GetOrderHeader_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" schemaLocation="../Schemas/GetOrderHeader.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" schemaLocation="../Schemas/GetOrderHeader.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" schemaLocation="../Schemas/GetOrderHeader.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" schemaLocation="../Schemas/GetOrderHeader.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" schemaLocation="../Schemas/GetOrderHeader.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" schemaLocation="../Schemas/GetOrderHeader.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetOrderHeader" schemaLocation="../Schemas/GetOrderHeader.xsd"/>
+      </schema>
+   </wsdl:types>
+   <wsdl:message name="GetOrderHeaderInput_msg">
+      <wsdl:part name="GetOrderHeaderInput_msg" element="db:GetOrderHeaderInput"/>
+   </wsdl:message>
+   <wsdl:message name="GetOrderHeaderOutputCollection_msg">
+      <wsdl:part name="GetOrderHeaderOutputCollection" element="db:GetOrderHeaderOutputCollection"/>
+   </wsdl:message>
+   <wsdl:portType name="GetOrderHeader_ptt">
+      <wsdl:operation name="GetOrderHeader">
+         <wsdl:input message="tns:GetOrderHeaderInput_msg"/>
+         <wsdl:output message="tns:GetOrderHeaderOutputCollection_msg"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

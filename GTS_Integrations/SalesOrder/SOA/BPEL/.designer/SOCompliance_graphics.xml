@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<graphics>
+   <diagram optimizeLayout="false" fixedWidthSwimlanes="true" roundedPartnerlinks="true" centerZoom="true" validateOnLoad="true" confirmBeforeDelete="true" selectedPartnerLinkColor="49,105,198" swimlaneBackground="240,240,240" swimlaneDividerBackground="218,218,218" graphBackground="255,255,255" selectedBorderBackground="49,105,198" connectedPartnerLinkColor="204,204,255" connectablePartnerLinkColor="0,0,255" unconnectedPartnerLinkColor="192,192,192"/>
+   <annotationfile/>
+   <iconize/>
+   <partnerlink_locations>
+      <partnerlink name="SOComplianceClient" x="0" y="132" side="left"/>
+      <partnerlink name="GetAllLineDetails" x="0" y="469" side="left"/>
+      <partnerlink name="CallSalesOrderAPI" x="0" y="1950" side="left"/>
+      <partnerlink name="CreateOrUpdTrx" x="0" y="2466" side="left"/>
+      <partnerlink name="GetDimData" x="0" y="853" side="left"/>
+      <partnerlink name="InsResultLegalControlData" x="0" y="2409" side="left"/>
+      <partnerlink name="NotificationService1" x="0" y="18" side="left"/>
+      <partnerlink name="NotificationService2" x="0" y="75" side="left"/>
+      <partnerlink name="GetOrderHeader" x="1821" y="373" side="right"/>
+      <partnerlink name="ScreenResultsUpd" x="1821" y="4018" side="right"/>
+      <partnerlink name="InsertError" x="1821" y="2447" side="right"/>
+      <partnerlink name="ProcessBlock" x="1821" y="2504" side="right"/>
+      <partnerlink name="GetPartnerTypes" x="1821" y="1045" side="right"/>
+      <partnerlink name="InsertCtMapErr" x="1821" y="2782" side="right"/>
+      <partnerlink name="BlockedStatusCheck" x="1821" y="3090" side="right"/>
+   </partnerlink_locations>
+   <graph_layout viewport="431,3166,1297,805" show_swimlanes="true">
+      <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[1]" type="email" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/forEach[1]" type="foreach"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/forEach[1]/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/forEach" type="foreach"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/forEach/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/forEach/scope/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/forEach/scope/sequence/if[1]/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/forEach/scope/sequence/if[1]/else/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/sequence/forEach[1]" type="foreach"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/sequence/forEach[1]/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/sequence/forEach[1]/scope/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/sequence/forEach[2]" type="foreach"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/sequence/forEach[2]/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/sequence/forEach[2]/scope/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/if/sequence" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/scope" type="email" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/sequence/if/else/sequence/scope/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/forEach[2]" type="foreach"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/forEach[2]/scope" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/forEach[2]/scope/sequence" type="sequence"/>
+   </graph_layout>
+   <bookmarks/>
+</graphics>
